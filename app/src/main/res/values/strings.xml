@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Dietively</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="log_in_title">Welcome Back</string>
+    <string name="log_in_title_sub">Login back into your account</string>
+    <string name="sign_up_title">Welcome</string>
+    <string name="sign_up_title_sub">Signup into your account</string>
+    <string name="log_in_str">Log In</string>
+    <string name="sign_up_str">Sign Up</string>
+    <string name="log_in_buttom_str">Don\'t have an account yet? <b><font color="#4D8A3F">Join Now</font></b></string>
+    <string name="sign_up_buttom_str">Already have an Account?<font color="#4D8A3F">Log In</font></string>
+
+    <string name="user_str">Full Name</string>
+    <string name="email_str">E-mail Id</string>
+    <string name="mobile_str">Mobile No.</string>
+    <string name="password_str">Password</string>
+    <string name="forget_str">Forget Password</string>
+    <string name="age_str">Age</string>
+    <string name="gender">Gender</string>
+    <string name="profile_str">Profile</string>
+    <string name="diary_str">Diary</string>
+    <string name="recipes_str">Recipes</string>
+    <string name="procress_str">Procress</string>
+    <string name="break_fast_str">Breakfast</string>
+    <string name="lunch_str">Lunch</string>
+    <string name="dinner_str">Dinner</string>
+    <string name="snack_str">Shanks</string>
+    <string name="food_list_str">Foods</string>
+
+    <string name="calorie">Calories</string>
+    <string name="protein">Proteins</string>
+    <string name="fat">Fats</string>
+    <string name="next_str">Next</string>
+    <string name="add_info">Additional Info</string>
+    <string name="dob_str">"Date oF Birth "</string>
+    <string name="add_quantity">Add Quantity</string>
+    <string name="calories">Calories</string>
+    <string name="carbohydrates">Carbohydrates</string>
+    <string name="save">Add</string>
+    <string name="add">Add</string>
+    <string name="start_track_str">Start track</string>
+    <string name="track_str">Tracking</string>
+
+</resources>

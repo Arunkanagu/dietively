@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.RecipesFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/app_green_100"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/_8adp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_7adp"
+            android:src="@drawable/ic_back_arrow" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:letterSpacing=".05"
+            android:paddingVertical="@dimen/_4adp"
+            android:text="@string/track_str"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18asp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="@dimen/_7adp"
+        android:layout_marginVertical="@dimen/_8adp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".12" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_20adp"
+        android:clickable="true"
+        android:contentDescription="@string/add"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/app_green_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/child_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_9adp"
+                    android:paddingVertical="@dimen/_16adp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Baby name :"
+                        android:textSize="@dimen/_12asp" />
+
+                    <TextView
+                        android:id="@+id/dob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Baby date of brith :"
+                        android:textSize="@dimen/_12asp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_9adp"
+                    android:paddingTop="@dimen/_16adp">
+
+
+                    <TextView
+                        android:id="@+id/heading1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BABY IMMUNIZATION SCHEDULE / VACCINATION CHART 2023-24"
+                        android:textSize="@dimen/_16asp"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100adp"
+                        android:src="@drawable/birth"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:id="@+id/information"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="@dimen/_12adp"
+                        android:text="Right from the time of birth, till the age of 12, your child will be vulnerable to a host of diseases, viruses, and bacteria. At such a tender age, the body of your child may not have the required immune system to protect them from these communicable diseases. In an event, where your child may contract a disease or virus, the consequences may be dire. Certain diseases such as diphtheria, tetanus, whooping cough and HPV still exist today, and can still be easily be transmitted from one individual to another. In many parts of the world, vaccine-preventable diseases are still common, and there is every chance of your child contracting them.\n \nTo prevent such an occurrence, the ideal solution is to protect your child through vaccination. Vaccinations ensure that your child is immune to certain communicable diseases, thus preventing them from contracting it or even suffering from the effects of it. In the occasion where they come into contact with an infected individual, the vaccinated child will not be affected by the serious effects or complications.\n\n Also, Read Vaccination Schedule and the Diseases They Protect Against\n"
+                        android:textSize="@dimen/_10asp"
+                        />
+
+                    <TextView
+                        android:id="@+id/heading2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Baby Immunization Schedule Table (based on IAPCOI recommendations)"
+                        android:textSize="@dimen/_16asp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_200adp"
+                        android:src="@drawable/vaccine"
+                        android:layout_marginVertical="@dimen/_12adp"
+                        android:scaleType="fitCenter"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

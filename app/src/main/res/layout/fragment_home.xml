@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/app_green_100"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_8adp"
+            android:weightSum="1"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_7adp"
+
+                android:src="@drawable/ic_back_arrow"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:letterSpacing=".05"
+                android:paddingHorizontal="@dimen/_12asp"
+                android:paddingVertical="@dimen/_4adp"
+                android:text="@string/diary_str"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18asp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".13" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100adp"
+            android:layout_margin="@dimen/_8adp"
+            android:elevation="@dimen/_4adp"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:outlineSpotShadowColor="@color/app_white_200"
+            android:paddingHorizontal="@dimen/_12adp"
+            app:cardBackgroundColor="@color/app_green_100"
+            app:cardCornerRadius="@dimen/_6adp"
+            app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_4adp"
+                    android:paddingStart="@dimen/_12asp"
+                    android:text="Date"
+                    android:textAlignment="textStart"
+                    android:textColor="#DADADADA"
+                    android:textSize="@dimen/_16asp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2adp"
+                    android:background="@color/white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/_6adp"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_9adp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/cal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:paddingVertical="@dimen/_3adp"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14adp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="calories"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9adp"
+                            android:textFontWeight="500"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/pro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:paddingVertical="@dimen/_3adp"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14adp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="protein"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+
+                            android:textSize="@dimen/_9adp"
+                            android:textFontWeight="500"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/car"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:paddingVertical="@dimen/_3adp"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14adp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="carbohydrates"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9adp"
+                            android:textFontWeight="500"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/fat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:paddingVertical="@dimen/_3adp"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14adp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="fat"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9adp"
+                            android:textFontWeight="500"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ain">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_12adp"
+                android:paddingTop="@dimen/_12asp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:background="@drawable/bg_under_line"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="@dimen/_4adp"
+                        android:text="@string/food_list_str"
+                        android:textFontWeight="700"
+                        android:textSize="@dimen/_14asp"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteY="104dp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".1"
+                        android:src="@drawable/ic_calendar" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2adp"
+                    android:background="@color/text_200" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".40"
+                    android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="@dimen/_1adp"
+                    app:endIconTint="@color/black"
+                    app:errorEnabled="false"
+                    app:errorTextColor="#EA9090"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/food_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:imeOptions="actionNext"
+                        android:inputType="textAutoComplete"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10asp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:color/white"
+                    android:paddingVertical="@dimen/_6adp"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    tools:listitem="@layout/food_items" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/app_green_100"
+        app:itemActiveIndicatorStyle="@style/Theme.BottomNavigationView.ActiveIndicator"
+        app:itemIconSize="@dimen/_22adp"
+        app:itemIconTint="@color/white"
+        app:itemRippleColor="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/main_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
