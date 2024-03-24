@@ -1,19 +1,24 @@
 package com.project.dietively
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.project.dietively.commen.AppPreferences
 import com.project.dietively.databinding.ActivityMainBinding
 import com.project.dietively.util.getFoodItemList
+import com.project.dietively.util.hideKeyboard
 import com.project.dietively.util.hideSystemUI
 import com.project.dietively.viewmodel.AppViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.math.log
 
 
 @AndroidEntryPoint
@@ -30,20 +35,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
+        window.hideSystemUI()
         navController =
             (supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment).navController
-        window.hideSystemUI()
+
+        if (AppPreferences.loginEmail.isNullOrEmpty()){
+            navController.navigate(R.id.loginFragment)
+        }else{
+            navController.navigate(R.id.homeFragment)
+        }
+
         observeDate()
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if(navController.currentDestination?.label == "fragment_home" || navController.currentDestination?.label == "fragment_login" ){
+                if (navController.currentDestination?.label == "fragment_home" || navController.currentDestination?.label == "fragment_login") {
                     finish()
-                }else{
+                } else {
                     navController.popBackStack()
                 }
 
@@ -56,16 +65,27 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "observeDate: getUser -> $it")
         }
 
-        viewModel.getFoodItem.observe(this){
+        viewModel.getFoodItem.observe(this) {
             Log.d(TAG, "observeDate: getFoodItem -> $it")
-            if (it.isEmpty()){
+            if (it.isEmpty()) {
                 viewModel.insertFoodItems(getFoodItemList().filter { true })
+            }
+        }
+
+        viewModel.toastMsgStr.observe(this) {
+            if (!it.isNullOrEmpty()) {
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
             }
         }
     }
 
+    override fun onUserInteraction() {
+        super.onUserInteraction()
+        //hideKeyboard(this.binding.root)
+    }
+
     companion object {
-        private val TAG = "MainActivity"
+        private const val TAG = "MainActivity"
     }
 
 }

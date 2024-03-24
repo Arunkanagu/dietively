@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_box"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_8adp"
+        android:text="Date"
+        android:textColor="@color/app_black_100"
+        android:textSize="@dimen/_10adp" />
+
+    <TextView
+
+        android:id="@+id/vaccina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_box"
+        android:gravity="start"
+        android:paddingStart="@dimen/_8adp"
+        android:paddingVertical="@dimen/_4adp"
+        android:text="Vaccination"
+        android:textColor="@color/app_black_100"
+        android:textSize="@dimen/_10adp" />
+</LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4adp"
+    app:cardBackgroundColor="@color/app_white_200"
+    app:cardCornerRadius="@dimen/_4adp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_8adp"
+            android:paddingVertical="@dimen/_8adp"
+            android:paddingTop="@dimen/_4adp">
+
+            <TextView
+                android:id="@+id/food_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.07"
+                android:text="title"
+                android:textAllCaps="false"
+                android:textColor="@color/app_black_100"
+                android:textSize="@dimen/_14asp"
+                android:textStyle="bold" />
+
+            <TextView
+android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_4adp"
+                android:text="@string/quantity_str"
+                android:textStyle="bold"
+                android:textFontWeight="600"
+                android:textSize="@dimen/_10asp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4adp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/calories"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:paddingTop="@dimen/_4adp"
+                    android:text="calories : "
+                    android:textSize="@dimen/_10asp" />
+
+                <TextView
+                    android:id="@+id/protein"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:paddingTop="@dimen/_4adp"
+                    android:text="quantity : "
+                    android:textSize="@dimen/_10asp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/fat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:paddingTop="@dimen/_4adp"
+                    android:text="quantity : "
+                    android:textSize="@dimen/_10asp" />
+
+                <TextView
+                    android:id="@+id/carbohydrates"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:paddingTop="@dimen/_4adp"
+                    android:text="carbohydrates : "
+                    android:textSize="@dimen/_10asp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/remove_food"
+            android:layout_width="@dimen/_20adp"
+            android:layout_height="@dimen/_20adp"
+            android:src="@drawable/ic_close"
+            android:padding="@dimen/_4adp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="@color/red"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_8adp"
+            android:layout_marginEnd="@dimen/_8adp"
+            />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

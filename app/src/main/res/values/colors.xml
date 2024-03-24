@@ -9,10 +9,12 @@
     <color name="text_100">#161616</color>
     <color name="text_200">#353535</color>
     <color name="app_white_200">#4DDADADA</color>
+    <color name="app_white_300">#A3A2A2</color>
 
 
     <color name="round_edit_text_bg">#F7F8F9</color>
     <color name="round_edit_text_board">#DADADA</color>
     <color name="red">#EC7575</color>
     <color name="gray_700">#363636</color>
+    <color name="select">#E8A09B</color>
 </resources>

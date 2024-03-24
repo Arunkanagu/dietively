@@ -7,8 +7,8 @@ import com.project.dietively.databinding.FoodItemsBinding
 import com.project.dietively.roomdb.FoodItem
 
 class FoodAdapter(
-    private var foodList: List<FoodItem>,
-    private val listener: OnClickListener
+            private var foodList: List<FoodItem>,
+            private val listener: OnClickListener
 ) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
     init {

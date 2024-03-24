@@ -1,19 +1,24 @@
 package com.project.dietively.roomdb
 
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.Keep
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import com.project.dietively.R
 import com.project.dietively.util.getCurrentDate
 import java.util.Date
 
 @Keep
-@Entity(tableName = "user_profile")
+@Entity(
+    tableName = "user_profile",
+    indices = [Index(value = ["email"], unique = true)]
+)
 data class UserProfile(
     @SerializedName("id")
-    @PrimaryKey val id: String = "",
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     var user: String = "",
     var email: String = "",
     var phone: String = "",
@@ -26,7 +31,6 @@ data class UserProfile(
     var trackingData: String = "",
     @ColumnInfo(name = "last_update")
     var lastUpdate: Long = Date().time
-
 )
 
 @Keep
@@ -36,8 +40,8 @@ data class FoodItem(
     val name: String,
     val calories: String,
     val protein: String,
-    val carbohydrates: String,
     val fat: String,
+    val carbohydrates: String,
     val type: String,
     var img: Int = 0,
     @PrimaryKey(autoGenerate = true)
@@ -58,5 +62,10 @@ data class DailyData(
     val carbohydrates: String,
     val fat: String,
     @ColumnInfo(name = "add_count")
-    val addCount:Int = 1
+    val addCount: Int = 1
+)
+
+data class WorkoutView(
+    val textView: TextView,
+    val imageViem: ImageView
 )

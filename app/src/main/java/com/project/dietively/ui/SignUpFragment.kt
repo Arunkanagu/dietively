@@ -3,17 +3,17 @@ package com.project.dietively.ui
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.project.dietively.R
-import com.project.dietively.databinding.FragmentLoginBinding
 import com.project.dietively.databinding.FragmentSignUpBinding
 import com.project.dietively.roomdb.UserProfile
+import com.project.dietively.util.hideKeyboard
 import com.project.dietively.viewmodel.AppViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -44,6 +44,11 @@ class SignUpFragment : Fragment() {
             findNavController().popBackStack(R.id.loginFragment, false)
         }
         genderSelection()
+
+        binding.info1.setOnClickListener { hideKeyboard(view) }
+        binding.info2.setOnClickListener { hideKeyboard(view) }
+        binding.linearLayout.setOnClickListener { hideKeyboard(view) }
+        binding.constraintLayout.setOnClickListener { hideKeyboard(view) }
         arrayLayout.add(binding.info1)
         arrayLayout.add(binding.info2)
         viewControl(0)
@@ -91,6 +96,7 @@ class SignUpFragment : Fragment() {
             userDate.dateOfBirth = binding.dateOfBirth.text.toString()
             userDate.age = binding.age.text.toString().toInt()
             userDate.genter = selectedGender
+            Log.d(TAG, "onViewCreated: ${userDate}")
             viewModel.insertUser(userDate)
             findNavController().popBackStack()
         }

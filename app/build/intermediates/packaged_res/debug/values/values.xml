@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="app_black_100">#191919</color>
+    <color name="app_green_100">#4D8A3F</color>
+    <color name="app_white_100">#F2F2F2</color>
+    <color name="app_white_200">#4DDADADA</color>
+    <color name="app_white_300">#A3A2A2</color>
+    <color name="black">#FF000000</color>
+    <color name="gray_700">#363636</color>
+    <color name="ic_new_launcher_background">#FFFFFF</color>
+    <color name="red">#EC7575</color>
+    <color name="round_edit_text_bg">#F7F8F9</color>
+    <color name="round_edit_text_board">#DADADA</color>
+    <color name="select">#E8A09B</color>
+    <color name="text_100">#161616</color>
+    <color name="text_200">#353535</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="add">Add</string>
+    <string name="add_info">Additional Info</string>
+    <string name="add_quantity">Add Quantity</string>
+    <string name="age_str">Age</string>
+    <string name="app_name">Dietively</string>
+    <string name="break_fast_str">Breakfast</string>
+    <string name="calorie">Calories</string>
+    <string name="calories">Calories</string>
+    <string name="carbohydrates">Carbohydrates</string>
+    <string name="change_pass_str">Change Password</string>
+    <string name="diary_str">Diary</string>
+    <string name="dinner_str">Dinner</string>
+    <string name="dob_str">"Date oF Birth "</string>
+    <string name="email_str">E-mail Id</string>
+    <string name="enter_new_password_str">Enter the password</string>
+    <string name="enter_the_email_str">Enter the your email ID</string>
+    <string name="fat">Fats</string>
+    <string name="food_list_str">Foods</string>
+    <string name="forget_pass_buttom_str">you remember password!. <font color="#4D8A3F">back to login</font></string>
+    <string name="forget_pass_title">Forget Password</string>
+    <string name="forget_pass_title_sub">It\'s ok! reset your password.</string>
+    <string name="forget_str">Forget Password</string>
+    <string name="gender">Gender</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="log_in_buttom_str">Don\'t have an account yet? <b><font color="#4D8A3F">Join Now</font></b></string>
+    <string name="log_in_str">Log In</string>
+    <string name="log_in_title">Welcome Back</string>
+    <string name="log_in_title_sub">Login back into your account</string>
+    <string name="lunch_str">Lunch</string>
+    <string name="men_str">Mens</string>
+    <string name="mobile_str">Mobile No.</string>
+    <string name="next_str">Next</string>
+    <string name="password_str">Password</string>
+    <string name="procress_str">Procress</string>
+    <string name="profile_str">Profile</string>
+    <string name="protein">Proteins</string>
+    <string name="quantity_str">Quantity :</string>
+    <string name="recipes_str">Recipes</string>
+    <string name="save">Add</string>
+    <string name="sign_up_buttom_str">Already have an Account?<font color="#4D8A3F">Log In</font></string>
+    <string name="sign_up_str">Sign Up</string>
+    <string name="sign_up_title">Welcome</string>
+    <string name="sign_up_title_sub">Signup into your account</string>
+    <string name="snack_str">Shanks</string>
+    <string name="start_track_str">Start track</string>
+    <string name="track_str">Tracking</string>
+    <string name="user_str">Full Name</string>
+    <string name="women_str">Women</string>
+    <style name="Base.Theme.Dietively" parent="Theme.Material3.Light.NoActionBar">
+        
+        
+        <item name="fontFamily">@font/inter</item>
+        <item name="font">@font/inter</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightNavigationBar" ns1:targetApi="o_mr1">true</item>
+        <item name="android:forceDarkAllowed" ns1:targetApi="q">false</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" ns1:ignore="NewApi">shortEdges</item>
+
+    </style>
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+    </style>
+    <style name="Theme.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#DFC4EDBB</item>
+    </style>
+    <style name="Theme.Dietively" parent="Base.Theme.Dietively">
+    </style>
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="colorControlActivated">#000000</item>
+    </style>
+</resources>

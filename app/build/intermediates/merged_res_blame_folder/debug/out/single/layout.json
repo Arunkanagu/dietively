@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\layout_add_food.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\layout_add_food.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_forget_pass.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_forget_pass.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_women.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_women.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\daily_food_layout.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\daily_food_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_splash.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_men.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_men.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_sign_up.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "com.project.dietively.app-mergeDebugResources-51:/layout/fragment_progress.xml",
+        "source": "com.project.dietively.app-main-54:/layout/fragment_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\layout_vaccination.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\layout_vaccination.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_dairy.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_dairy.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_recipes.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_recipes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\food_items.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\food_items.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\layout_dropdown_item.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\layout_dropdown_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_login.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\layout_child_dailog.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\layout_child_dailog.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\item_image.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\item_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_progress.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\activity_splash.xml"
+    }
+]

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_6adp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_black_100"
+            android:paddingHorizontal="@dimen/_9adp"
+            android:paddingVertical="@dimen/_14adp"
+            android:text="Selected Item"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18asp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_9adp"
+            android:paddingVertical="@dimen/_14adp"
+            android:text="food item"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12asp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4adp"
+            android:background="#44ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:paddingHorizontal="@dimen/_9adp"
+                android:paddingVertical="@dimen/_1adp"
+                android:text="@string/add_quantity"
+                android:textColor="@color/black"
+                android:textFontWeight="500"
+                android:textSize="@dimen/_8asp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/remove_ticket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4adp"
+                android:layout_weight="0.2"
+                android:padding="@dimen/_1adp"
+                android:src="@drawable/bt_minusbutton" />
+
+            <TextView
+                android:id="@+id/ticket_count"
+                android:layout_width="@dimen/_20adp"
+                android:layout_height="@dimen/_20adp"
+                android:gravity="center"
+                android:text="03"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8asp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/add_ticket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4adp"
+                android:layout_weight="0.2"
+                android:padding="@dimen/_1adp"
+                android:src="@drawable/bt_plusbutton" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3adp"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_12asp"
+            android:paddingHorizontal="@dimen/_9adp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/calories"
+                android:textColor="@color/gray_700"
+                android:textFontWeight="400"
+                android:textSize="@dimen/_8adp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/calories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="₹100"
+                android:paddingEnd="@dimen/_20adp"
+                android:textColor="@color/gray_700"
+                android:textFontWeight="500"
+                android:textSize="@dimen/_8adp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3adp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_9adp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/protein"
+                android:textColor="@color/gray_700"
+                android:textFontWeight="400"
+                android:textSize="@dimen/_8adp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/protein"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="₹100"
+                android:paddingEnd="@dimen/_20adp"
+                android:textColor="@color/gray_700"
+                android:textFontWeight="500"
+                android:textSize="@dimen/_8adp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3adp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_9adp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/carbohydrates"
+                android:textColor="@color/gray_700"
+                android:textFontWeight="400"
+                android:textSize="@dimen/_8adp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/carbohydrates"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="₹100"
+                android:paddingEnd="@dimen/_20adp"
+                android:textColor="@color/gray_700"
+                android:textFontWeight="500"
+                android:textSize="@dimen/_8adp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3adp"
+            android:orientation="horizontal"
+
+            android:paddingHorizontal="@dimen/_9adp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/fat"
+                android:textColor="@color/gray_700"
+                android:textFontWeight="400"
+                android:textSize="@dimen/_8adp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="₹100"
+                android:paddingEnd="@dimen/_20adp"
+                android:textColor="@color/gray_700"
+                android:textFontWeight="500"
+                android:textSize="@dimen/_8adp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16adp"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="@dimen/_20adp"
+            android:layout_marginBottom="@dimen/_20asp"
+            android:background="@drawable/bg_button"
+            android:paddingHorizontal="@dimen/_50adp"
+            android:backgroundTint="@color/app_green_100"
+            android:paddingVertical="@dimen/_1adp"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_12asp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/app_green_100" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

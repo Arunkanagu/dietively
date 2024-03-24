@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_green_100"
+    android:backgroundTint="@color/app_green_100"
+    app:cardCornerRadius="@dimen/_4adp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_20adp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:letterSpacing=".05"
+            android:paddingVertical="@dimen/_12adp"
+            android:text="Baby Details Form"
+            android:textAlignment="center"
+            android:textColor="@color/app_white_100"
+            android:textFontWeight="600"
+            android:textSize="@dimen/_14asp"
+            android:textStyle="bold" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/app_white_200"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12adp"
+            android:layout_marginBottom="@dimen/_4adp"
+            android:hint="Baby's name"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeErrorColor="@color/white"
+            app:boxStrokeWidth="@dimen/_1adp"
+            app:boxStrokeWidthFocused="0.5dp"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="@color/white"
+            app:placeholderTextColor="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12asp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dob_textField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_4adp"
+                android:hint="@string/dob_str"
+                android:layout_weight=".8"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:boxStrokeWidth="@dimen/_1adp"
+                app:boxStrokeWidthFocused="0.5dp"
+                app:hintTextColor="@color/white"
+                app:placeholderTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date_of_birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="none"
+                    android:editable="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12asp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/date_of_birth_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:padding="@dimen/_12adp"
+                android:src="@drawable/ic_calendar" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start_track"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_16adp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="@color/white"
+            android:paddingVertical="@dimen/_8adp"
+            android:text="@string/start_track_str"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12asp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/white" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

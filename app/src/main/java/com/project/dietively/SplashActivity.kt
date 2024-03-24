@@ -1,15 +1,11 @@
 package com.project.dietively
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.navigation.fragment.findNavController
-import com.project.dietively.R
-import com.project.dietively.databinding.ActivityMainBinding
 import com.project.dietively.databinding.ActivitySplashBinding
-import java.util.Timer
 
 class SplashActivity : AppCompatActivity() {
 

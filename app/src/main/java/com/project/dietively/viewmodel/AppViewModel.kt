@@ -1,5 +1,6 @@
 package com.project.dietively.viewmodel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.project.dietively.roomdb.DailyData
@@ -14,6 +15,8 @@ import javax.inject.Inject
 class AppViewModel @Inject constructor(
     private val databaseRepository: DatabaseRepository
 ) : ViewModel() {
+
+    val toastMsgStr = MutableLiveData<String>("")
 
     fun insertUser(userProfile: UserProfile) {
         viewModelScope.launch {

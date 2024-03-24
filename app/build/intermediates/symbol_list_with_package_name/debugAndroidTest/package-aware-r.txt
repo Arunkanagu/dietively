@@ -1,0 +1,3 @@
+com.project.dietively.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

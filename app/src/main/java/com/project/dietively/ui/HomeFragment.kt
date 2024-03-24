@@ -25,7 +25,6 @@ import com.project.dietively.roomdb.FoodItem
 import com.project.dietively.util.getCurrentDate
 import com.project.dietively.util.getDate
 import com.project.dietively.viewmodel.AppViewModel
-import java.util.ArrayList
 import java.util.Date
 
 
@@ -87,28 +86,32 @@ class HomeFragment : Fragment() {
             setFoodList(it)
         }
 
-        foodList.observe(viewLifecycleOwner){
+        foodList.observe(viewLifecycleOwner) {
             Log.d(TAG, "observe: $it")
             setRecycleView(it)
         }
 
         viewModel.getUserDailyData.observe(viewLifecycleOwner) { data ->
-            Log.d(TAG, "observe: $data")
-            val list = data.filter { getCurrentDate() == getDate(it.date.toLong()) && it.userId == AppPreferences.loginEmail }
-            var calSum = 0f
-            var proSum = 0f
-            var carSum = 0f
-            var fatSum = 0f
-            list.forEach {
-                calSum += it.calories.toFloat() * it.addCount
-                proSum += it.protein.toFloat() * it.addCount
-                carSum += it.carbohydrates.toFloat() * it.addCount
-                fatSum += it.fat.toFloat() * it.addCount
+            if (data != null) {
+
+                Log.d(TAG, "observe: $data")
+                val list =
+                    data.filter { getCurrentDate() == getDate(it.date.toLong()) && it.userId == AppPreferences.loginEmail }
+                var calSum = 0f
+                var proSum = 0f
+                var carSum = 0f
+                var fatSum = 0f
+                list.forEach {
+                    calSum += it.calories.toFloat() * it.addCount
+                    proSum += it.protein.toFloat() * it.addCount
+                    carSum += it.carbohydrates.toFloat() * it.addCount
+                    fatSum += it.fat.toFloat() * it.addCount
+                }
+                binding.cal.text = "${"%.1f".format(calSum)}"
+                binding.pro.text = "${"%.1f".format(proSum)}"
+                binding.car.text = "${"%.1f".format(carSum)}"
+                binding.fat.text = "${"%.1f".format(fatSum)}"
             }
-            binding.cal.text = "${"%.1f".format(calSum)}"
-            binding.pro.text = "${"%.1f".format(proSum)}"
-            binding.car.text = "${"%.1f".format(carSum)}"
-            binding.fat.text = "${"%.1f".format(fatSum)}"
         }
 
     }
@@ -164,7 +167,7 @@ class HomeFragment : Fragment() {
             val builder = AlertDialog.Builder(requireContext())
             val bindingAlert = LayoutAddFoodBinding.inflate(layoutInflater)
             builder.setView(bindingAlert.root)
-            builder.setCancelable(false)
+            //builder.setCancelable(false)
             alertDialog = builder.create()
             quantity.observe(this) {
                 bindingAlert.ticketCount.text = "$it"
@@ -188,7 +191,7 @@ class HomeFragment : Fragment() {
                         Date().time.toString(),
                         AppPreferences.loginEmail.toString(),
                         foodItem.name,
-                        "$averageCalories",
+                            "$averageCalories",
                         "$averageProtein",
                         "$averageCarbohydrates",
                         "$averageFat",
@@ -218,14 +221,28 @@ class HomeFragment : Fragment() {
         var r = 0f
         try {
             Log.d(TAG, "calculateAverage: $range")
-            val parts = range.split("-")
-            val lowerValue = parts[0].trim().substringBefore(" ").toDouble()
-            val upperValue = parts[1].trim().substringBefore(" ").toDouble()
-            r = ((lowerValue + upperValue) / 2).toFloat()
+            r = if (range.contains("mg", ignoreCase = true)){
+                val value = range.removeSuffix("mg").trim().toFloat()
+                val valueInGrams = value / 1000.0
+                valueInGrams.toFloat()
+            }else if (range.contains("kcal", ignoreCase = true)){
+                val value = range.removeSuffix("kcal").trim().toFloat()
+                kilocaloriesToGrams(value).toFloat()
+            }else if (range.contains("g", ignoreCase = true)){
+                val value = range.removeSuffix("g").trim().toFloat()
+                value
+            }else{
+                val value = range.replace(Regex("[^0-9.]"), "").trim().toFloat()
+                value
+            }
         } catch (e: Exception) {
             Log.e(TAG, "showDialog: ${e.message.toString()}")
         }
         return r.toDouble()
+    }
+
+    fun kilocaloriesToGrams(kilocalories: Float): Double {
+        return kilocalories / 4.0
     }
 
 
