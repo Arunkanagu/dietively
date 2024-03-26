@@ -39,8 +39,9 @@ public final class AppDatabase_Impl extends AppDatabase {
         db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_user_profile_email` ON `user_profile` (`email`)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `daily_data` (`date` TEXT NOT NULL, `user_id` TEXT NOT NULL, `food_item_name` TEXT NOT NULL, `calories` TEXT NOT NULL, `protein` TEXT NOT NULL, `carbohydrates` TEXT NOT NULL, `fat` TEXT NOT NULL, `add_count` INTEGER NOT NULL, PRIMARY KEY(`date`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS `food_item` (`name` TEXT NOT NULL, `calories` TEXT NOT NULL, `protein` TEXT NOT NULL, `fat` TEXT NOT NULL, `carbohydrates` TEXT NOT NULL, `type` TEXT NOT NULL, `img` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `menstrual_day_data` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email` TEXT NOT NULL, `lastPeriodStartDate` TEXT NOT NULL, `duringDays` INTEGER NOT NULL, `usualCycleLength` INTEGER NOT NULL, `saveTime` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd3e53cb63ff002fd9da78fe0b488ad17')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '62475ea19b5304d4600eff9385b9ae97')");
       }
 
       @Override
@@ -48,6 +49,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         db.execSQL("DROP TABLE IF EXISTS `user_profile`");
         db.execSQL("DROP TABLE IF EXISTS `daily_data`");
         db.execSQL("DROP TABLE IF EXISTS `food_item`");
+        db.execSQL("DROP TABLE IF EXISTS `menstrual_day_data`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -149,9 +151,25 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoFoodItem + "\n"
                   + " Found:\n" + _existingFoodItem);
         }
+        final HashMap<String, TableInfo.Column> _columnsMenstrualDayData = new HashMap<String, TableInfo.Column>(6);
+        _columnsMenstrualDayData.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMenstrualDayData.put("email", new TableInfo.Column("email", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMenstrualDayData.put("lastPeriodStartDate", new TableInfo.Column("lastPeriodStartDate", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMenstrualDayData.put("duringDays", new TableInfo.Column("duringDays", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMenstrualDayData.put("usualCycleLength", new TableInfo.Column("usualCycleLength", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMenstrualDayData.put("saveTime", new TableInfo.Column("saveTime", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysMenstrualDayData = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesMenstrualDayData = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoMenstrualDayData = new TableInfo("menstrual_day_data", _columnsMenstrualDayData, _foreignKeysMenstrualDayData, _indicesMenstrualDayData);
+        final TableInfo _existingMenstrualDayData = TableInfo.read(db, "menstrual_day_data");
+        if (!_infoMenstrualDayData.equals(_existingMenstrualDayData)) {
+          return new RoomOpenHelper.ValidationResult(false, "menstrual_day_data(com.project.dietively.roomdb.MenstrualDays).\n"
+                  + " Expected:\n" + _infoMenstrualDayData + "\n"
+                  + " Found:\n" + _existingMenstrualDayData);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "d3e53cb63ff002fd9da78fe0b488ad17", "a7cd7b2015e39ccb21c3a12b5988d8f2");
+    }, "62475ea19b5304d4600eff9385b9ae97", "d9d9c0de500e032c948b0b931006a83e");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -162,7 +180,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "user_profile","daily_data","food_item");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "user_profile","daily_data","food_item","menstrual_day_data");
   }
 
   @Override
@@ -174,6 +192,7 @@ public final class AppDatabase_Impl extends AppDatabase {
       _db.execSQL("DELETE FROM `user_profile`");
       _db.execSQL("DELETE FROM `daily_data`");
       _db.execSQL("DELETE FROM `food_item`");
+      _db.execSQL("DELETE FROM `menstrual_day_data`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();

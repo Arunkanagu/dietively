@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.WomenFragment">
 
     <LinearLayout
@@ -48,6 +48,7 @@
         android:layout_marginVertical="@dimen/_8adp"
         android:padding="@dimen/_7adp"
         android:src="@drawable/ic_close"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -57,5 +58,492 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".12" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+        <ScrollView
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_12adp"
+                android:paddingTop="@dimen/_12adp">
+
+                <LinearLayout
+                    android:id="@+id/health_care"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_12adp"
+                    android:background="@drawable/bg_button"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10adp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_100adp"
+                        android:layout_height="@dimen/_100adp"
+                        android:padding="@dimen/_8adp"
+                        android:src="@drawable/ic_women_exercise" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="@dimen/_8adp"
+                        android:text="Health Care"
+                        android:textColor="@color/app_white_100"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/periods_track"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_12adp"
+                    android:background="@drawable/bg_button"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10adp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_100adp"
+                        android:layout_height="@dimen/_100adp"
+                        android:padding="@dimen/_8adp"
+                        android:src="@drawable/ic_women_periods" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="@dimen/_8adp"
+                        android:text="Period Tracker"
+                        android:textColor="@color/app_white_100"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/periods_track_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_12adp"
+                android:paddingVertical="@dimen/_30adp"
+                android:paddingTop="@dimen/_12adp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_green_100"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:id="@+id/back_date"
+                        android:layout_width="@dimen/_30adp"
+                        android:layout_height="@dimen/_30adp"
+                        android:background="@color/app_white_200"
+                        android:paddingVertical="@dimen/_4adp"
+                        android:src="@drawable/ic_arrow_left" />
+
+                    <TextView
+                        android:id="@+id/month_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:paddingVertical="@dimen/_14adp"
+                        android:text="Date"
+                        android:textAlignment="center"
+                        android:textColor="#DADADADA"
+                        android:textSize="@dimen/_16asp"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:id="@+id/next_date"
+                        android:layout_width="@dimen/_30adp"
+                        android:layout_height="@dimen/_30adp"
+                        android:background="@color/app_white_200"
+                        android:paddingVertical="@dimen/_4adp"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_4adp"
+                    android:weightSum="7">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2adp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="8dp"
+                        android:text="Sun"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2adp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="8dp"
+                        android:text="Mon"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2adp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="8dp"
+                        android:text="Tue"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2adp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="8dp"
+                        android:text="Wed"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2adp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="8dp"
+                        android:text="Thu"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2adp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="8dp"
+                        android:text="Fri"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2adp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="8dp"
+                        android:text="Sat"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/period_calender"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_240adp"
+                    android:layout_gravity="center"
+                    android:background="#ADCFCFCF"
+                    android:paddingHorizontal="@dimen/_4adp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:listitem="@layout/calendar_day_item" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_12adp"
+                    android:weightSum="1">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4adp"
+                        android:drawableStart="@drawable/ic_circle"
+                        android:drawablePadding="@dimen/_4adp"
+                        android:drawableTint="@color/pre_period"
+                        android:text="Pre-Period" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4adp"
+                        android:drawableStart="@drawable/ic_circle"
+                        android:drawablePadding="@dimen/_4adp"
+                        android:drawableTint="@color/period_day"
+                        android:text="Period Days" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4adp"
+                        android:drawableStart="@drawable/ic_circle"
+                        android:drawablePadding="@dimen/_4adp"
+                        android:drawableTint="@color/post_period"
+                        android:text="Post Period" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_12adp"
+                    android:weightSum="1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/reset_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_4adp"
+                        android:layout_weight=".5"
+                        android:background="@drawable/bg_button"
+                        android:gravity="center"
+                        android:text="Restart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_white_100"
+                        android:textSize="@dimen/_14asp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/change_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4adp"
+                        android:layout_weight=".5"
+                        android:background="@drawable/bg_button"
+                        android:gravity="center"
+                        android:text="Change date"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_white_100"
+                        android:textSize="@dimen/_14asp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/form_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_12adp"
+                android:paddingVertical="@dimen/_30adp"
+                android:paddingTop="@dimen/_12adp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:gravity="center"
+                    android:letterSpacing=".02"
+                    android:paddingVertical="@dimen/_8adp"
+                    android:text="Starting date of your last period?"
+                    android:textColor="@color/app_black_100"
+                    android:textSize="@dimen/_14asp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/last_period_strat_date"
+                        android:layout_width="@dimen/_100adp"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing=".02"
+                        android:paddingVertical="@dimen/_6adp"
+                        android:paddingStart="@dimen/_6adp"
+                        android:text="12/03/202"
+                        android:textColor="@color/app_black_100"
+                        android:textSize="@dimen/_12asp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/period_date_picker"
+                        android:layout_width="@dimen/_30adp"
+                        android:layout_height="@dimen/_30adp"
+                        android:background="@drawable/bt_minusbutton"
+                        android:backgroundTint="@color/app_green_100"
+                        android:padding="@dimen/_6adp"
+                        android:src="@drawable/ic_calendar" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20adp"
+                    android:layout_weight=".6"
+                    android:gravity="center"
+                    android:letterSpacing=".02"
+                    android:paddingVertical="@dimen/_8adp"
+                    android:text="How long did it last?"
+                    android:textColor="@color/app_black_100"
+                    android:textSize="@dimen/_14asp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/minus_data1"
+                        android:layout_width="@dimen/_25adp"
+                        android:layout_height="@dimen/_25adp"
+                        android:background="@drawable/bt_minusbutton"
+                        android:backgroundTint="@color/app_green_100"
+                        android:padding="@dimen/_6adp"
+                        android:src="@drawable/ic_remove" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/during_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_12adp"
+                        android:letterSpacing=".02"
+                        android:paddingVertical="@dimen/_6adp"
+                        android:paddingStart="@dimen/_6adp"
+                        android:text="12"
+                        android:textColor="@color/app_black_100"
+                        android:textSize="@dimen/_12asp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/add_data1"
+                        android:layout_width="@dimen/_25adp"
+                        android:layout_height="@dimen/_25adp"
+                        android:background="@drawable/bt_minusbutton"
+                        android:backgroundTint="@color/app_green_100"
+                        android:padding="@dimen/_6adp"
+                        android:src="@drawable/ic_add" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20adp"
+                    android:layout_weight=".6"
+                    android:gravity="center"
+                    android:letterSpacing=".02"
+                    android:paddingVertical="@dimen/_8adp"
+                    android:text="What’s your usual cycle length?"
+                    android:textColor="@color/app_black_100"
+                    android:textSize="@dimen/_14asp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/minus_data2"
+                        android:layout_width="@dimen/_25adp"
+                        android:layout_height="@dimen/_25adp"
+                        android:background="@drawable/bt_minusbutton"
+                        android:backgroundTint="@color/app_green_100"
+                        android:padding="@dimen/_6adp"
+                        android:src="@drawable/ic_remove" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/cycle_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_12adp"
+                        android:letterSpacing=".02"
+                        android:paddingVertical="@dimen/_6adp"
+                        android:paddingStart="@dimen/_6adp"
+                        android:text="12"
+                        android:textColor="@color/app_black_100"
+                        android:textSize="@dimen/_12asp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/add_data2"
+                        android:layout_width="@dimen/_25adp"
+                        android:layout_height="@dimen/_25adp"
+                        android:background="@drawable/bt_minusbutton"
+                        android:backgroundTint="@color/app_green_100"
+                        android:padding="@dimen/_6adp"
+                        android:src="@drawable/ic_add" />
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/start_tracking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30adp"
+                    android:background="@drawable/bg_button"
+                    android:letterSpacing=".1"
+                    android:text="Start Track"
+                    android:textAllCaps="false"
+                    android:textColor="@color/app_white_100"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

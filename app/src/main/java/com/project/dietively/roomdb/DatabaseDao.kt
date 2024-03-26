@@ -7,6 +7,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.project.dietively.commen.AppPreferences
 
 @Dao
 interface DatabaseDao {
@@ -49,5 +50,11 @@ interface DatabaseDao {
 
     @Query("SELECT * FROM food_item")
     fun getFoodItem(): LiveData<List<FoodItem>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertMenstrualDays(data: MenstrualDays)
+    @Query("SELECT * FROM menstrual_day_data")
+    fun getMenstrualDays(): LiveData<List<MenstrualDays>>
+
 
 }

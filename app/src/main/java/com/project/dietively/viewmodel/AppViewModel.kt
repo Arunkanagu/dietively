@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.project.dietively.roomdb.DailyData
 import com.project.dietively.roomdb.DatabaseRepository
 import com.project.dietively.roomdb.FoodItem
+import com.project.dietively.roomdb.MenstrualDays
 import com.project.dietively.roomdb.UserProfile
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -83,6 +84,15 @@ class AppViewModel @Inject constructor(
     }
 
     val getFoodItem = databaseRepository.getFoodItem
+
+
+    fun insertMenstrualDays(data: MenstrualDays) {
+        viewModelScope.launch {
+            databaseRepository.insertMenstrualDays(data)
+        }
+    }
+
+    val getMenstrualDays = databaseRepository.getMenstrualDays
 
 
 }

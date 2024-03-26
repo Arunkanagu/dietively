@@ -75,12 +75,12 @@ class RecipesFragment : Fragment() {
                     if (userData!!.age > 5) {
                         if (userData!!.genter == "Male") {
                             userData!!.tracking = options[0]
-                            userData!!.trackingData = TextUtils.join(",", arrayOf("", ""))
+                            userData!!.trackingData = TextUtils.join("", arrayOf("", ""))
                             userData?.let { it1 -> viewModel.insertUser(it1) }
                             viewControl("Man")
                         } else if (userData!!.genter == "Female") {
                             userData!!.tracking = options[1]
-                            userData!!.trackingData = TextUtils.join(",", arrayOf("", ""))
+                            userData!!.trackingData = TextUtils.join("", arrayOf("", ""))
                             userData?.let { it1 -> viewModel.insertUser(it1) }
                             viewControl("Woman")
                         }
@@ -115,7 +115,8 @@ class RecipesFragment : Fragment() {
                             findNavController().navigate(R.id.menFragment)
                         }
 
-                        options[1] -> {}
+                        options[1] -> {
+                        }
                         options[2] -> {
                             createCustomAlertDialog()
                         }
@@ -174,6 +175,9 @@ class RecipesFragment : Fragment() {
         when (setName) {
             options[0] -> {
                 findNavController().navigate(R.id.menFragment)
+            }
+            options[1] -> {
+                findNavController().navigate(R.id.womenFragment)
             }
 
             options[2] -> {

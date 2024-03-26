@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 
 @Database(
-    entities = [UserProfile::class,DailyData::class,FoodItem::class],
+    entities = [UserProfile::class,DailyData::class,FoodItem::class,MenstrualDays::class],
     version = 1,
     exportSchema = false
 )

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><!-- calendar_day_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingVertical="@dimen/_4adp"
+    >
+    <TextView
+        android:id="@+id/dayTextView"
+        android:layout_width="@dimen/_35adp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_button"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="1"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+</LinearLayout>
+

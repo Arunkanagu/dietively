@@ -85,6 +85,8 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array weight_gain_items
+array weight_loss_items
 attr SharedValue
 attr SharedValueId
 attr action
@@ -2122,6 +2124,10 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color ovulation
+color period_day
+color post_period
+color pre_period
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2140,6 +2146,7 @@ color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color select
+color selected_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -3825,6 +3832,7 @@ drawable ic_call_answer_video
 drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
+drawable ic_circle
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_close
@@ -3833,6 +3841,8 @@ drawable ic_data_usage
 drawable ic_gym_checklist
 drawable ic_gym_fitness
 drawable ic_gym_lifestyle
+drawable ic_gym_weight_gain
+drawable ic_gym_weight_lose
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3846,7 +3856,10 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_person
+drawable ic_remove
 drawable ic_search_black_24
+drawable ic_women_exercise
+drawable ic_women_periods
 drawable img_child
 drawable img_man
 drawable img_woman
@@ -4005,6 +4018,8 @@ id actions
 id activity_chooser_view_content
 id add
 id add_btn
+id add_data1
+id add_data2
 id add_ticket
 id age
 id age_textField
@@ -4075,6 +4090,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id change_date
 id change_pass_btn
 id checkbox
 id checked
@@ -4107,10 +4123,12 @@ id currentState
 id custom
 id customPanel
 id cut
+id cycle_days
 id date
 id date_of_birth
 id date_of_birth_btn
 id date_picker_actions
+id dayTextView
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -4141,6 +4159,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id during_days
 id easeIn
 id easeInOut
 id easeOut
@@ -4194,6 +4213,7 @@ id food_view
 id forever
 id forget
 id forgetPassFragment
+id form_layout
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -4215,6 +4235,7 @@ id guideline5
 id header_title
 id heading1
 id heading2
+id health_care
 id hide_ime_id
 id hideable
 id home
@@ -4246,6 +4267,7 @@ id join
 id jumpToEnd
 id jumpToStart
 id labeled
+id last_period_strat_date
 id layout
 id left
 id leftToRight
@@ -4299,10 +4321,13 @@ id menFragment
 id message
 id middle
 id mini
+id minus_data1
+id minus_data2
 id mobile
 id mobile_no
 id mobile_textField
 id month_grid
+id month_name
 id month_navigation_bar
 id month_navigation_fragment_toggle
 id month_navigation_next
@@ -4379,6 +4404,7 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id option
 id option1
 id option2
 id option3
@@ -4400,6 +4426,10 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id period_calender
+id period_date_picker
+id periods_track
+id periods_track_layout
 id pieChart
 id pin
 id position
@@ -4421,6 +4451,7 @@ id recyclerView1
 id remove_food
 id remove_ticket
 id report_drawn
+id reset_date
 id reverseSawtooth
 id right
 id rightToLeft
@@ -4492,6 +4523,7 @@ id startHorizontal
 id startToEnd
 id startVertical
 id start_track
+id start_tracking
 id staticLayout
 id staticPostLayout
 id stop
@@ -4573,10 +4605,16 @@ id visible
 id visible_removing_fragment_view_tag
 id web_plan_btn
 id web_view
+id weight_gain
+id weight_list
+id weight_list_layout
+id weight_loss
+id weight_title
 id west
 id withText
 id with_icon
 id withinBounds
+id womenFragment
 id workoutTitle1
 id workoutTitleStatus1
 id workout_layout
@@ -4703,6 +4741,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_splash
+layout calendar_day_item
 layout custom_dialog
 layout daily_food_layout
 layout design_bottom_navigation_item
@@ -4739,6 +4778,7 @@ layout layout_add_food
 layout layout_child_dailog
 layout layout_dropdown_item
 layout layout_vaccination
+layout layout_weight_item
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4932,6 +4972,7 @@ string forget_pass_title
 string forget_pass_title_sub
 string forget_str
 string gender
+string health_str
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
@@ -5073,6 +5114,8 @@ string start_track_str
 string status_bar_notification_info_overflow
 string track_str
 string user_str
+string weight_gain_title
+string weight_loss_title
 string women_str
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

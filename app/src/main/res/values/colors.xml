@@ -17,4 +17,10 @@
     <color name="red">#EC7575</color>
     <color name="gray_700">#363636</color>
     <color name="select">#E8A09B</color>
+    <color name="selected_color">#4CAF50</color>
+
+    <color name="period_day">#e2008b</color>
+    <color name="pre_period">#fcb328</color>
+    <color name="post_period">#4b1b6f</color>
+    <color name="ovulation">#4CAF50</color>
 </resources>

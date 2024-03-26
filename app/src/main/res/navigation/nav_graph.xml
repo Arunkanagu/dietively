@@ -58,4 +58,9 @@
         android:name="com.project.dietively.ui.MenFragment"
         android:label="fragment_men"
         tools:layout="@layout/fragment_men" />
+    <fragment
+        android:id="@+id/womenFragment"
+        android:name="com.project.dietively.ui.WomenFragment"
+        android:label="fragment_women"
+        tools:layout="@layout/fragment_women" />
 </navigation>

@@ -21,7 +21,7 @@ import com.project.dietively.databinding.FragmentProgressBinding
 import com.project.dietively.roomdb.DailyData
 import com.project.dietively.util.addOneDay
 import com.project.dietively.util.getCurrentDate
-import com.project.dietively.util.getDate
+import com.project.dietively.util.getDateToString
 import com.project.dietively.util.subtractOneDay
 import com.project.dietively.viewmodel.AppViewModel
 import java.text.SimpleDateFormat
@@ -103,7 +103,7 @@ class ProgressFragment : Fragment() {
         selectedDate = filteredDateStr
         binding.date.text = filteredDateStr
         val list =
-            dailyData.filter { filteredDateStr == getDate(it.date.toLong()) && it.userId == AppPreferences.loginEmail }
+            dailyData.filter { filteredDateStr == getDateToString(it.date.toLong()) && it.userId == AppPreferences.loginEmail }
 
         var calSum = 0f
         var proSum = 0f

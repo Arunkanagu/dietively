@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="weight_gain_items">
+        <item>Homemade protein smoothies</item>
+        <item>Rice</item>
+        <item>Nuts and nut butter</item>
+        <item>Red meats</item>
+        <item>Potatoes and complex carbohydrates</item>
+        <item>Salmon and oily fish</item>
+        <item>Whole grain bread</item>
+        <item>Avocados</item>
+        <item>Cheese</item>
+        <item>Whole eggs</item>
+    </string-array>
+    <string-array name="weight_loss_items">
+        <item>Eat varied, colourful, nutritionally dense foods</item>
+        <item>Engage in regular physical activity and exercise</item>
+        <item>Healthy Eating Habits</item>
+        <item>Physical Activity</item>
+        <item>Cut down on sugar and refined carbs</item>
+        <item>Cut carbs</item>
+        <item>Cut fat</item>
+    </string-array>
     <color name="app_black_100">#191919</color>
     <color name="app_green_100">#4D8A3F</color>
     <color name="app_white_100">#F2F2F2</color>
@@ -8,10 +29,15 @@
     <color name="black">#FF000000</color>
     <color name="gray_700">#363636</color>
     <color name="ic_new_launcher_background">#FFFFFF</color>
+    <color name="ovulation">#4CAF50</color>
+    <color name="period_day">#e2008b</color>
+    <color name="post_period">#4b1b6f</color>
+    <color name="pre_period">#fcb328</color>
     <color name="red">#EC7575</color>
     <color name="round_edit_text_bg">#F7F8F9</color>
     <color name="round_edit_text_board">#DADADA</color>
     <color name="select">#E8A09B</color>
+    <color name="selected_color">#4CAF50</color>
     <color name="text_100">#161616</color>
     <color name="text_200">#353535</color>
     <color name="white">#FFFFFFFF</color>
@@ -38,6 +64,7 @@
     <string name="forget_pass_title_sub">It\'s ok! reset your password.</string>
     <string name="forget_str">Forget Password</string>
     <string name="gender">Gender</string>
+    <string name="health_str">Health</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="log_in_buttom_str">Don\'t have an account yet? <b><font color="#4D8A3F">Join Now</font></b></string>
     <string name="log_in_str">Log In</string>
@@ -62,6 +89,8 @@
     <string name="start_track_str">Start track</string>
     <string name="track_str">Tracking</string>
     <string name="user_str">Full Name</string>
+    <string name="weight_gain_title">Weight Gain</string>
+    <string name="weight_loss_title">Weight Loss</string>
     <string name="women_str">Women</string>
     <style name="Base.Theme.Dietively" parent="Theme.Material3.Light.NoActionBar">
         

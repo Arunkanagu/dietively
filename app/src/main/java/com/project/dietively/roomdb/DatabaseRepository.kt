@@ -52,4 +52,10 @@ class DatabaseRepository @Inject constructor(
     }
 
     val getFoodItem = databaseDao.getFoodItem()
+
+    suspend fun insertMenstrualDays(data: MenstrualDays) {
+        databaseDao.insertMenstrualDays(data)
+    }
+
+    val getMenstrualDays = databaseDao.getMenstrualDays()
 }

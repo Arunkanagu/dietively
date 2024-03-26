@@ -52,4 +52,32 @@
     <string name="men_str">Mens</string>
     <string name="women_str">Women</string>
 
+    <!-- Weight Gain Strings -->
+    <string name="weight_gain_title">Weight Gain</string>
+    <string-array name="weight_gain_items">
+        <item>Homemade protein smoothies</item>
+        <item>Rice</item>
+        <item>Nuts and nut butter</item>
+        <item>Red meats</item>
+        <item>Potatoes and complex carbohydrates</item>
+        <item>Salmon and oily fish</item>
+        <item>Whole grain bread</item>
+        <item>Avocados</item>
+        <item>Cheese</item>
+        <item>Whole eggs</item>
+    </string-array>
+
+    <!-- Weight Loss Strings -->
+    <string name="weight_loss_title">Weight Loss</string>
+    <string name="health_str">Health</string>
+    <string-array name="weight_loss_items">
+        <item>Eat varied, colourful, nutritionally dense foods</item>
+        <item>Engage in regular physical activity and exercise</item>
+        <item>Healthy Eating Habits</item>
+        <item>Physical Activity</item>
+        <item>Cut down on sugar and refined carbs</item>
+        <item>Cut carbs</item>
+        <item>Cut fat</item>
+    </string-array>
+
 </resources>

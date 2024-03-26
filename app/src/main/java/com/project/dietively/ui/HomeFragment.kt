@@ -23,7 +23,7 @@ import com.project.dietively.databinding.LayoutAddFoodBinding
 import com.project.dietively.roomdb.DailyData
 import com.project.dietively.roomdb.FoodItem
 import com.project.dietively.util.getCurrentDate
-import com.project.dietively.util.getDate
+import com.project.dietively.util.getDateToString
 import com.project.dietively.viewmodel.AppViewModel
 import java.util.Date
 
@@ -96,7 +96,7 @@ class HomeFragment : Fragment() {
 
                 Log.d(TAG, "observe: $data")
                 val list =
-                    data.filter { getCurrentDate() == getDate(it.date.toLong()) && it.userId == AppPreferences.loginEmail }
+                    data.filter { getCurrentDate() == getDateToString(it.date.toLong()) && it.userId == AppPreferences.loginEmail }
                 var calSum = 0f
                 var proSum = 0f
                 var carSum = 0f

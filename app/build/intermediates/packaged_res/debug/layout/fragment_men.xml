@@ -33,7 +33,7 @@
             android:gravity="center_vertical"
             android:letterSpacing=".05"
             android:paddingVertical="@dimen/_4adp"
-            android:text="@string/men_str"
+            android:text="@string/health_str"
             android:textColor="@color/white"
             android:textSize="@dimen/_18asp"
             android:textStyle="bold" />
@@ -48,6 +48,7 @@
         android:layout_marginVertical="@dimen/_8adp"
         android:padding="@dimen/_7adp"
         android:src="@drawable/ic_close"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -307,7 +308,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="top"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <WebView
                 android:id="@+id/food_view"
@@ -319,6 +320,7 @@
             android:id="@+id/main_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:layout_gravity="center">
 
             <LinearLayout
@@ -330,7 +332,7 @@
                 android:paddingTop="@dimen/_12adp">
 
                 <LinearLayout
-                    android:id="@+id/workout_plan_btn"
+                    android:id="@+id/weight_gain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_12adp"
@@ -338,6 +340,60 @@
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     android:padding="@dimen/_10adp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_100adp"
+                        android:layout_height="@dimen/_100adp"
+                        android:padding="@dimen/_8adp"
+                        android:src="@drawable/ic_gym_weight_gain" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="@dimen/_8adp"
+                        android:text="Weight Gain"
+                        android:textColor="@color/app_white_100"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/weight_loss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_12adp"
+                    android:background="@drawable/bg_button"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10adp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_100adp"
+                        android:layout_height="@dimen/_100adp"
+                        android:padding="@dimen/_8adp"
+                        android:src="@drawable/ic_gym_weight_lose" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="@dimen/_8adp"
+                        android:text="Weight Loss"
+                        android:textColor="@color/app_white_100"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/workout_plan_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_12adp"
+                    android:background="@drawable/bg_button"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10adp"
+                    android:visibility="gone">
 
                     <ImageView
                         android:layout_width="@dimen/_100adp"
@@ -364,7 +420,8 @@
                     android:background="@drawable/bg_button"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:padding="@dimen/_10adp">
+                    android:padding="@dimen/_10adp"
+                    android:visibility="gone">
 
                     <ImageView
                         android:layout_width="@dimen/_100adp"
@@ -391,7 +448,8 @@
                     android:background="@drawable/bg_button"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:padding="@dimen/_10adp">
+                    android:padding="@dimen/_10adp"
+                    android:visibility="gone">
 
                     <ImageView
                         android:layout_width="@dimen/_100adp"
@@ -416,6 +474,38 @@
         <WebView
             android:id="@+id/web_view"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/weight_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/weight_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_8adp"
+                android:text="weight Loss"
+                android:paddingHorizontal="@dimen/_12adp"
+                android:textColor="@color/app_black_100"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_8adp"
+                android:textSize="@dimen/_12asp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/weight_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_12adp"
+                android:layout_marginTop="@dimen/_8adp"
+                tools:listitem="@layout/layout_weight_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

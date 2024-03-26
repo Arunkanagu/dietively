@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+array weight_gain_items
+array weight_loss_items
 color app_black_100
 color app_green_100
 color app_white_100
@@ -8,10 +10,15 @@ color app_white_300
 color black
 color gray_700
 color ic_new_launcher_background
+color ovulation
+color period_day
+color post_period
+color pre_period
 color red
 color round_edit_text_bg
 color round_edit_text_board
 color select
+color selected_color
 color text_100
 color text_200
 color text_input_box_stroke
@@ -31,17 +38,23 @@ drawable ic_arrow_left
 drawable ic_arrow_right
 drawable ic_back_arrow
 drawable ic_calendar
+drawable ic_circle
 drawable ic_close
 drawable ic_dashboard
 drawable ic_data_usage
 drawable ic_gym_checklist
 drawable ic_gym_fitness
 drawable ic_gym_lifestyle
+drawable ic_gym_weight_gain
+drawable ic_gym_weight_lose
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_logout
 drawable ic_menu_book
 drawable ic_person
+drawable ic_remove
+drawable ic_women_exercise
+drawable ic_women_periods
 drawable img_child
 drawable img_man
 drawable img_woman
@@ -54,6 +67,8 @@ font inter
 id Password_cardView
 id action_splashFragment_to_loginFragment
 id add_btn
+id add_data1
+id add_data2
 id add_ticket
 id age
 id age_textField
@@ -83,17 +98,21 @@ id calories
 id car
 id carbohydrates
 id card
+id change_date
 id change_pass_btn
 id child_layout
 id clear
 id confirm_pass
 id confirm_pass_field
 id constraintLayout
+id cycle_days
 id date
 id date_of_birth
 id date_of_birth_btn
+id dayTextView
 id dob
 id dob_textField
+id during_days
 id edit_age
 id edit_btn
 id edit_date
@@ -117,6 +136,7 @@ id food_type
 id food_view
 id forget
 id forgetPassFragment
+id form_layout
 id gender
 id go_to_login
 id guideline
@@ -126,6 +146,7 @@ id guideline3
 id guideline5
 id heading1
 id heading2
+id health_care
 id homeFragment
 id idel_layout
 id image
@@ -135,6 +156,7 @@ id info_2
 id information
 id item
 id join
+id last_period_strat_date
 id linearLayout
 id linearLayout2
 id linearLayout3
@@ -148,9 +170,12 @@ id mainFragment
 id main_layout
 id male
 id menFragment
+id minus_data1
+id minus_data2
 id mobile
 id mobile_no
 id mobile_textField
+id month_name
 id name
 id nav_graph
 id nav_host_fragment
@@ -160,6 +185,7 @@ id new_pass_field
 id next
 id next_date
 id next_vac
+id option
 id option1
 id option2
 id option3
@@ -167,6 +193,10 @@ id option4
 id pass
 id passTextField
 id pass_textField
+id period_calender
+id period_date_picker
+id periods_track
+id periods_track_layout
 id pieChart
 id pro
 id profileFragment
@@ -178,6 +208,7 @@ id recipesFragment
 id recyclerView1
 id remove_food
 id remove_ticket
+id reset_date
 id save_btn
 id set_new_pass_btn
 id show_details_layour
@@ -185,6 +216,7 @@ id signUpFragment
 id sign_up
 id splashFragment
 id start_track
+id start_tracking
 id textView
 id textView1
 id ticket_count
@@ -199,12 +231,19 @@ id viewPager
 id view_all
 id web_plan_btn
 id web_view
+id weight_gain
+id weight_list
+id weight_list_layout
+id weight_loss
+id weight_title
+id womenFragment
 id workoutTitle1
 id workoutTitleStatus1
 id workout_layout
 id workout_plan_btn
 layout activity_main
 layout activity_splash
+layout calendar_day_item
 layout daily_food_layout
 layout food_items
 layout fragment_dairy
@@ -223,6 +262,7 @@ layout layout_add_food
 layout layout_child_dailog
 layout layout_dropdown_item
 layout layout_vaccination
+layout layout_weight_item
 menu main_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -302,6 +342,7 @@ string forget_pass_title
 string forget_pass_title_sub
 string forget_str
 string gender
+string health_str
 string hello_blank_fragment
 string log_in_buttom_str
 string log_in_str
@@ -326,6 +367,8 @@ string snack_str
 string start_track_str
 string track_str
 string user_str
+string weight_gain_title
+string weight_loss_title
 string women_str
 style Base.Theme.Dietively
 style LoginTextInputLayoutStyle

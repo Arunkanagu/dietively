@@ -39,6 +39,8 @@ public final class DatabaseDao_Impl implements DatabaseDao {
 
   private final EntityInsertionAdapter<FoodItem> __insertionAdapterOfFoodItem_1;
 
+  private final EntityInsertionAdapter<MenstrualDays> __insertionAdapterOfMenstrualDays;
+
   private final EntityDeletionOrUpdateAdapter<UserProfile> __deletionAdapterOfUserProfile;
 
   private final EntityDeletionOrUpdateAdapter<DailyData> __deletionAdapterOfDailyData;
@@ -242,6 +244,32 @@ public final class DatabaseDao_Impl implements DatabaseDao {
         }
         statement.bindLong(7, entity.getImg());
         statement.bindLong(8, entity.getId());
+      }
+    };
+    this.__insertionAdapterOfMenstrualDays = new EntityInsertionAdapter<MenstrualDays>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "INSERT OR REPLACE INTO `menstrual_day_data` (`id`,`email`,`lastPeriodStartDate`,`duringDays`,`usualCycleLength`,`saveTime`) VALUES (nullif(?, 0),?,?,?,?,?)";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final MenstrualDays entity) {
+        statement.bindLong(1, entity.getId());
+        if (entity.getEmail() == null) {
+          statement.bindNull(2);
+        } else {
+          statement.bindString(2, entity.getEmail());
+        }
+        if (entity.getLastPeriodStartDate() == null) {
+          statement.bindNull(3);
+        } else {
+          statement.bindString(3, entity.getLastPeriodStartDate());
+        }
+        statement.bindLong(4, entity.getDuringDays());
+        statement.bindLong(5, entity.getUsualCycleLength());
+        statement.bindLong(6, entity.getSaveTime());
       }
     };
     this.__deletionAdapterOfUserProfile = new EntityDeletionOrUpdateAdapter<UserProfile>(__db) {
@@ -509,6 +537,25 @@ public final class DatabaseDao_Impl implements DatabaseDao {
         __db.beginTransaction();
         try {
           __insertionAdapterOfFoodItem_1.insert(foodItems);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object insertMenstrualDays(final MenstrualDays data,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __insertionAdapterOfMenstrualDays.insert(data);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -867,6 +914,61 @@ public final class DatabaseDao_Impl implements DatabaseDao {
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
             _item = new FoodItem(_tmpName,_tmpCalories,_tmpProtein,_tmpFat,_tmpCarbohydrates,_tmpType,_tmpImg,_tmpId);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public LiveData<List<MenstrualDays>> getMenstrualDays() {
+    final String _sql = "SELECT * FROM menstrual_day_data";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"menstrual_day_data"}, false, new Callable<List<MenstrualDays>>() {
+      @Override
+      @Nullable
+      public List<MenstrualDays> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "email");
+          final int _cursorIndexOfLastPeriodStartDate = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPeriodStartDate");
+          final int _cursorIndexOfDuringDays = CursorUtil.getColumnIndexOrThrow(_cursor, "duringDays");
+          final int _cursorIndexOfUsualCycleLength = CursorUtil.getColumnIndexOrThrow(_cursor, "usualCycleLength");
+          final int _cursorIndexOfSaveTime = CursorUtil.getColumnIndexOrThrow(_cursor, "saveTime");
+          final List<MenstrualDays> _result = new ArrayList<MenstrualDays>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final MenstrualDays _item;
+            final int _tmpId;
+            _tmpId = _cursor.getInt(_cursorIndexOfId);
+            final String _tmpEmail;
+            if (_cursor.isNull(_cursorIndexOfEmail)) {
+              _tmpEmail = null;
+            } else {
+              _tmpEmail = _cursor.getString(_cursorIndexOfEmail);
+            }
+            final String _tmpLastPeriodStartDate;
+            if (_cursor.isNull(_cursorIndexOfLastPeriodStartDate)) {
+              _tmpLastPeriodStartDate = null;
+            } else {
+              _tmpLastPeriodStartDate = _cursor.getString(_cursorIndexOfLastPeriodStartDate);
+            }
+            final int _tmpDuringDays;
+            _tmpDuringDays = _cursor.getInt(_cursorIndexOfDuringDays);
+            final int _tmpUsualCycleLength;
+            _tmpUsualCycleLength = _cursor.getInt(_cursorIndexOfUsualCycleLength);
+            final long _tmpSaveTime;
+            _tmpSaveTime = _cursor.getLong(_cursorIndexOfSaveTime);
+            _item = new MenstrualDays(_tmpId,_tmpEmail,_tmpLastPeriodStartDate,_tmpDuringDays,_tmpUsualCycleLength,_tmpSaveTime);
             _result.add(_item);
           }
           return _result;

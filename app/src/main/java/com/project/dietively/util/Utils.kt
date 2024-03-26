@@ -31,7 +31,7 @@ fun getCurrentDate(): String {
     return sdf.format(currentDate)
 }
 
-fun getDate(timeMillis: Long): String {
+fun getDateToString(timeMillis: Long): String {
     val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
     val currentDate = Date(timeMillis)
     return sdf.format(currentDate)
@@ -40,6 +40,12 @@ fun getDate(timeMillis: Long): String {
 @SuppressLint("SimpleDateFormat")
 fun convertStringToDate(dateString: String): Date? {
     val format = SimpleDateFormat("dd/MM/yyyy")
+    return format.parse(dateString)
+}
+
+@SuppressLint("SimpleDateFormat")
+fun stringToDate(dateString: String): Date? {
+    val format = SimpleDateFormat("dd-MM-yyyy")
     return format.parse(dateString)
 }
 

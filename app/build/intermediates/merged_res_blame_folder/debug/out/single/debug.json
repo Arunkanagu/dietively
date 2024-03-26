@@ -24,6 +24,10 @@
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\raw\\image41.png"
     },
     {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_ic_remove.xml.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\ic_remove.xml"
+    },
+    {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -42,6 +46,10 @@
     {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_ic_gym_weight_gain.png.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\ic_gym_weight_gain.png"
     },
     {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_bg_box.xml.flat",
@@ -136,6 +144,10 @@
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\mipmap-xxxhdpi\\ic_new_launcher_foreground.webp"
     },
     {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_ic_gym_weight_lose.png.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\ic_gym_weight_lose.png"
+    },
+    {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
@@ -180,12 +192,12 @@
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\raw\\image3.jpg"
     },
     {
-        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\raw_image34.png.flat",
-        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\raw\\image34.png"
-    },
-    {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_birth.png.flat",
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\birth.png"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\raw_image34.png.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\raw\\image34.png"
     },
     {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\raw_image21.png.flat",
@@ -376,12 +388,20 @@
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\raw\\image23.png"
     },
     {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_bg_unselect_gender.xml.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\bg_unselect_gender.xml"
+    },
+    {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\raw_image36.png.flat",
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\raw\\image36.png"
     },
     {
-        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_bg_unselect_gender.xml.flat",
-        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\bg_unselect_gender.xml"
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\layout_layout_weight_item.xml.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\layout_weight_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_ic_women_periods.png.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\ic_women_periods.png"
     },
     {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_ic_arrow_left.xml.flat",
@@ -404,12 +424,24 @@
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_ic_women_exercise.png.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\ic_women_exercise.png"
+    },
+    {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\layout_fragment_dairy.xml.flat",
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_dairy.xml"
     },
     {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\layout_layout_dropdown_item.xml.flat",
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\layout_dropdown_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\layout_calendar_day_item.xml.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\calendar_day_item.xml"
+    },
+    {
+        "merged": "com.project.dietively.app-merged_res-52:/layout_fragment_women.xml.flat",
+        "source": "com.project.dietively.app-main-54:/layout/fragment_women.xml"
     },
     {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\raw_image2.jpg.flat",
@@ -480,8 +512,8 @@
         "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\raw\\image17.jpg"
     },
     {
-        "merged": "com.project.dietively.app-merged_res-52:/layout_fragment_progress.xml.flat",
-        "source": "com.project.dietively.app-main-54:/layout/fragment_progress.xml"
+        "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_ic_circle.xml.flat",
+        "source": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\ic_circle.xml"
     },
     {
         "merged": "C:\\Users\\Ranjith R\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\raw_image12.jpg.flat",

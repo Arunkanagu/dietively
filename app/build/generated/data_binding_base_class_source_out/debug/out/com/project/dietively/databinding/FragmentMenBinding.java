@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.project.dietively.R;
@@ -106,6 +107,21 @@ public final class FragmentMenBinding implements ViewBinding {
   public final WebView webView;
 
   @NonNull
+  public final LinearLayout weightGain;
+
+  @NonNull
+  public final RecyclerView weightList;
+
+  @NonNull
+  public final LinearLayout weightListLayout;
+
+  @NonNull
+  public final LinearLayout weightLoss;
+
+  @NonNull
+  public final TextView weightTitle;
+
+  @NonNull
   public final ScrollView workoutLayout;
 
   @NonNull
@@ -128,8 +144,11 @@ public final class FragmentMenBinding implements ViewBinding {
       @NonNull LinearLayout foodPlanBtn, @NonNull WebView foodView, @NonNull Guideline guideline3,
       @NonNull LinearLayout linearLayout5, @NonNull ScrollView mainLayout,
       @NonNull TextView textView, @NonNull LinearLayout webPlanBtn, @NonNull WebView webView,
-      @NonNull ScrollView workoutLayout, @NonNull LinearLayout workoutPlanBtn,
-      @NonNull TextView workoutTitle1, @NonNull ImageView workoutTitleStatus1) {
+      @NonNull LinearLayout weightGain, @NonNull RecyclerView weightList,
+      @NonNull LinearLayout weightListLayout, @NonNull LinearLayout weightLoss,
+      @NonNull TextView weightTitle, @NonNull ScrollView workoutLayout,
+      @NonNull LinearLayout workoutPlanBtn, @NonNull TextView workoutTitle1,
+      @NonNull ImageView workoutTitleStatus1) {
     this.rootView = rootView;
     this.back = back;
     this.basic1 = basic1;
@@ -158,6 +177,11 @@ public final class FragmentMenBinding implements ViewBinding {
     this.textView = textView;
     this.webPlanBtn = webPlanBtn;
     this.webView = webView;
+    this.weightGain = weightGain;
+    this.weightList = weightList;
+    this.weightListLayout = weightListLayout;
+    this.weightLoss = weightLoss;
+    this.weightTitle = weightTitle;
     this.workoutLayout = workoutLayout;
     this.workoutPlanBtn = workoutPlanBtn;
     this.workoutTitle1 = workoutTitle1;
@@ -353,6 +377,36 @@ public final class FragmentMenBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.weight_gain;
+      LinearLayout weightGain = ViewBindings.findChildViewById(rootView, id);
+      if (weightGain == null) {
+        break missingId;
+      }
+
+      id = R.id.weight_list;
+      RecyclerView weightList = ViewBindings.findChildViewById(rootView, id);
+      if (weightList == null) {
+        break missingId;
+      }
+
+      id = R.id.weight_list_layout;
+      LinearLayout weightListLayout = ViewBindings.findChildViewById(rootView, id);
+      if (weightListLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.weight_loss;
+      LinearLayout weightLoss = ViewBindings.findChildViewById(rootView, id);
+      if (weightLoss == null) {
+        break missingId;
+      }
+
+      id = R.id.weight_title;
+      TextView weightTitle = ViewBindings.findChildViewById(rootView, id);
+      if (weightTitle == null) {
+        break missingId;
+      }
+
       id = R.id.workout_layout;
       ScrollView workoutLayout = ViewBindings.findChildViewById(rootView, id);
       if (workoutLayout == null) {
@@ -381,7 +435,8 @@ public final class FragmentMenBinding implements ViewBinding {
           basic4, basic5, basic6, basic7, basic8, basicStatus1, basicStatus2, basicStatus3,
           basicStatus4, basicStatus5, basicStatus6, basicStatus7, basicStatus8, clear, foodLayout,
           foodPlanBtn, foodView, guideline3, linearLayout5, mainLayout, textView, webPlanBtn,
-          webView, workoutLayout, workoutPlanBtn, workoutTitle1, workoutTitleStatus1);
+          webView, weightGain, weightList, weightListLayout, weightLoss, weightTitle, workoutLayout,
+          workoutPlanBtn, workoutTitle1, workoutTitleStatus1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

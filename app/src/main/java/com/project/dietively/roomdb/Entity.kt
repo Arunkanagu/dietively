@@ -1,7 +1,9 @@
 package com.project.dietively.roomdb
 
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.ColorRes
 import androidx.annotation.Keep
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -9,6 +11,7 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.project.dietively.util.getCurrentDate
+import java.time.LocalDate
 import java.util.Date
 
 @Keep
@@ -65,7 +68,37 @@ data class DailyData(
     val addCount: Int = 1
 )
 
+@Keep
+@Entity(tableName = "menstrual_day_data")
+data class MenstrualDays(
+    @SerializedName("id")
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    var email: String = "",
+    @SerializedName("last_period_date")
+    var lastPeriodStartDate: String = getCurrentDate(),
+    @SerializedName("during_days")
+    var duringDays: Int = 0,
+    @SerializedName("usual_cycle_length")
+    var usualCycleLength: Int = 0,
+    @SerializedName("save_time")
+    var saveTime: Long = Date().time
+)
+
+data class PeriodsData(
+    var lastPeriodStratDate: String = getCurrentDate(),
+    var duringDays: Int = 5,
+    var cycleDays: Int = 20
+)
+
 data class WorkoutView(
     val textView: TextView,
     val imageViem: ImageView
+)
+
+
+data class CalendarDay(
+    val dayOfMonth: Int,
+    var isSelected: Boolean = false,
+    @ColorRes
+    var backgroundColor: Int = android.R.color.transparent
 )
