@@ -96,7 +96,7 @@ class HomeFragment : Fragment() {
 
                 Log.d(TAG, "observe: $data")
                 val list =
-                    data.filter { getCurrentDate() == getDateToString(it.date.toLong()) && it.userId == AppPreferences.loginEmail }
+                    data.filter { getCurrentDate() == getDateToString(it.date.toLong()) && it.userId == AppPreferences.loginUuid }
                 var calSum = 0f
                 var proSum = 0f
                 var carSum = 0f
@@ -189,7 +189,7 @@ class HomeFragment : Fragment() {
                 quantity.value?.let { it1 ->
                     DailyData(
                         Date().time.toString(),
-                        AppPreferences.loginEmail.toString(),
+                        AppPreferences.loginUuid.toString(),
                         foodItem.name,
                             "$averageCalories",
                         "$averageProtein",

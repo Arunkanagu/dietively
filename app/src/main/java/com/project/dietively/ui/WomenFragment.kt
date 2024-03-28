@@ -1,5 +1,6 @@
 package com.project.dietively.ui
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import android.widget.EditText
 import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
@@ -18,19 +20,17 @@ import com.google.gson.Gson
 import com.project.dietively.R
 import com.project.dietively.adapter.CalendarAdapter
 import com.project.dietively.commen.AppPreferences
+import com.project.dietively.databinding.DialogChangeDataBinding
 import com.project.dietively.databinding.FragmentWomenBinding
 import com.project.dietively.roomdb.CalendarDay
 import com.project.dietively.roomdb.MenstrualDays
 import com.project.dietively.roomdb.PeriodsData
 import com.project.dietively.roomdb.UserProfile
-import com.project.dietively.util.convertStringToDate
 import com.project.dietively.util.getCurrentDate
 import com.project.dietively.util.getDateToString
 import com.project.dietively.util.stringToDate
 import com.project.dietively.viewmodel.AppViewModel
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
@@ -62,7 +62,7 @@ class WomenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.getUser.observe(viewLifecycleOwner) { u ->
-            userData = u.find { it.email == AppPreferences.loginEmail }!!
+            userData = u.find { it.userId == AppPreferences.loginUuid }!!
             if (userData != null) {
                 Log.d(TAG, "onViewCreated: userData $userData")
                 if (userData!!.trackingData.isNotEmpty()) {
@@ -112,6 +112,9 @@ class WomenFragment : Fragment() {
             }
         }
 
+        binding.changeDate.setOnClickListener {
+            showCustomAlertDialog()
+        }
         binding.resetDate.setOnClickListener {
             val temp = userData
             if (temp != null) {
@@ -377,7 +380,7 @@ class WomenFragment : Fragment() {
                         setViewLayout("periods_track")
                         viewModel.insertMenstrualDays(
                             MenstrualDays(
-                                email = AppPreferences.loginEmail.toString(),
+                                userId = AppPreferences.loginUuid.toString(),
                                 lastPeriodStartDate = saveData.lastPeriodStratDate,
                                 duringDays = saveData.duringDays,
                                 usualCycleLength = saveData.cycleDays
@@ -417,7 +420,10 @@ class WomenFragment : Fragment() {
 
     // Function to show DatePickerDialog
     private fun showDatePickerDialog(
-        context: Context = requireContext(), selectedDate: String = getCurrentDate()
+        context: Context = requireContext(),
+        selectedDate: String = getCurrentDate(),
+        isDialog: Boolean = false,
+        exitText: EditText? = null
     ) {
         val calendar = Calendar.getInstance()
 
@@ -439,7 +445,9 @@ class WomenFragment : Fragment() {
 
                 val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
                 val formattedDate = dateFormat.format(selectedCalendar.time)
-
+                if (isDialog) {
+                    exitText?.setText(formattedDate)
+                }
                 binding.lastPeriodStratDate.setText(formattedDate)
             },
             calendar.get(Calendar.YEAR),
@@ -482,6 +490,85 @@ class WomenFragment : Fragment() {
             daysList.add(CalendarDay(i, isSelected, backgroundColor))
         }
         return daysList
+    }
+
+    private fun showCustomAlertDialog(
+        context: Context = requireContext(),
+        data: PeriodsData = Gson().fromJson(
+            userData?.trackingData, PeriodsData::class.java
+        )
+    ) {
+
+        var duringDaysTemp = data.duringDays
+        var cycleDaysTemp = data.cycleDays
+
+        // Inflate custom layout using View Binding
+        val dialogBinding = DialogChangeDataBinding.inflate(LayoutInflater.from(context));
+
+        val builder = AlertDialog.Builder(context)
+        builder.setView(dialogBinding.root)
+
+        val alertDialog = builder.create()
+        with(dialogBinding) {
+            lastPeriodStratDate.setText(data.lastPeriodStratDate)
+            duringDays.setText("$duringDaysTemp")
+            cycleDays.setText("$cycleDaysTemp")
+            addData1.setOnClickListener {
+                duringDaysTemp += 1
+                duringDays.setText("$duringDaysTemp")
+            }
+            minusData1.setOnClickListener {
+                if (duringDaysTemp > 1) {
+                    duringDaysTemp -= 1
+                }
+                duringDays.setText("$duringDaysTemp")
+            }
+            addData2.setOnClickListener {
+                cycleDaysTemp += 1
+                cycleDays.setText("$cycleDaysTemp")
+            }
+            minusData2.setOnClickListener {
+                if (cycleDaysTemp > 11) {
+                    cycleDaysTemp -= 1
+                }
+                cycleDays.setText("$cycleDaysTemp")
+            }
+            startTracking.setOnClickListener {
+                try {
+                    val saveData = PeriodsData(
+                        lastPeriodStratDate.text.toString(), duringDaysTemp, cycleDaysTemp
+                    )
+                    Log.d(TAG, "periodsTrackViewSet: $saveData")
+                    if (userData != null) {
+                        userData?.trackingData = Gson().toJson(saveData)
+                        viewModel.insertUser(userData!!)
+                        setViewLayout("periods_track")
+                        viewModel.insertMenstrualDays(
+                            MenstrualDays(
+                                userId = AppPreferences.loginUuid.toString(),
+                                lastPeriodStartDate = saveData.lastPeriodStratDate,
+                                duringDays = saveData.duringDays,
+                                usualCycleLength = saveData.cycleDays
+                            )
+                        )
+                        alertDialog.dismiss()
+                    }
+                } catch (e: Exception) {
+                    Log.d(TAG, "periodsTrackViewSet: ${e.message}")
+                }
+            }
+            dialogBinding.periodDatePicker.setOnClickListener {
+                showDatePickerDialog(
+                    selectedDate = dialogBinding.lastPeriodStratDate.text.toString(),
+                    isDialog = true,
+                    exitText = dialogBinding.lastPeriodStratDate
+                )
+            }
+        }
+
+
+        // Create and show AlertDialog
+        alertDialog.show()
     }
 
 

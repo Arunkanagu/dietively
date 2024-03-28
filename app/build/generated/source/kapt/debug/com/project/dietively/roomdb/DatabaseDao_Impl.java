@@ -59,55 +59,60 @@ public final class DatabaseDao_Impl implements DatabaseDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `user_profile` (`id`,`user`,`email`,`phone`,`date_of_birth`,`age`,`genter`,`password`,`tracking`,`trackingData`,`last_update`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `user_profile` (`id`,`user_id`,`user`,`email`,`phone`,`date_of_birth`,`age`,`genter`,`password`,`tracking`,`trackingData`,`last_update`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
       protected void bind(@NonNull final SupportSQLiteStatement statement,
           @NonNull final UserProfile entity) {
         statement.bindLong(1, entity.getId());
-        if (entity.getUser() == null) {
+        if (entity.getUserId() == null) {
           statement.bindNull(2);
         } else {
-          statement.bindString(2, entity.getUser());
+          statement.bindString(2, entity.getUserId());
         }
-        if (entity.getEmail() == null) {
+        if (entity.getUser() == null) {
           statement.bindNull(3);
         } else {
-          statement.bindString(3, entity.getEmail());
+          statement.bindString(3, entity.getUser());
         }
-        if (entity.getPhone() == null) {
+        if (entity.getEmail() == null) {
           statement.bindNull(4);
         } else {
-          statement.bindString(4, entity.getPhone());
+          statement.bindString(4, entity.getEmail());
         }
-        if (entity.getDateOfBirth() == null) {
+        if (entity.getPhone() == null) {
           statement.bindNull(5);
         } else {
-          statement.bindString(5, entity.getDateOfBirth());
+          statement.bindString(5, entity.getPhone());
         }
-        statement.bindLong(6, entity.getAge());
-        if (entity.getGenter() == null) {
-          statement.bindNull(7);
+        if (entity.getDateOfBirth() == null) {
+          statement.bindNull(6);
         } else {
-          statement.bindString(7, entity.getGenter());
+          statement.bindString(6, entity.getDateOfBirth());
         }
-        if (entity.getPassword() == null) {
+        statement.bindLong(7, entity.getAge());
+        if (entity.getGenter() == null) {
           statement.bindNull(8);
         } else {
-          statement.bindString(8, entity.getPassword());
+          statement.bindString(8, entity.getGenter());
         }
-        if (entity.getTracking() == null) {
+        if (entity.getPassword() == null) {
           statement.bindNull(9);
         } else {
-          statement.bindString(9, entity.getTracking());
+          statement.bindString(9, entity.getPassword());
         }
-        if (entity.getTrackingData() == null) {
+        if (entity.getTracking() == null) {
           statement.bindNull(10);
         } else {
-          statement.bindString(10, entity.getTrackingData());
+          statement.bindString(10, entity.getTracking());
         }
-        statement.bindLong(11, entity.getLastUpdate());
+        if (entity.getTrackingData() == null) {
+          statement.bindNull(11);
+        } else {
+          statement.bindString(11, entity.getTrackingData());
+        }
+        statement.bindLong(12, entity.getLastUpdate());
       }
     };
     this.__insertionAdapterOfDailyData = new EntityInsertionAdapter<DailyData>(__db) {
@@ -250,17 +255,17 @@ public final class DatabaseDao_Impl implements DatabaseDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `menstrual_day_data` (`id`,`email`,`lastPeriodStartDate`,`duringDays`,`usualCycleLength`,`saveTime`) VALUES (nullif(?, 0),?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `menstrual_day_data` (`id`,`userId`,`lastPeriodStartDate`,`duringDays`,`usualCycleLength`,`saveTime`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
       protected void bind(@NonNull final SupportSQLiteStatement statement,
           @NonNull final MenstrualDays entity) {
         statement.bindLong(1, entity.getId());
-        if (entity.getEmail() == null) {
+        if (entity.getUserId() == null) {
           statement.bindNull(2);
         } else {
-          statement.bindString(2, entity.getEmail());
+          statement.bindString(2, entity.getUserId());
         }
         if (entity.getLastPeriodStartDate() == null) {
           statement.bindNull(3);
@@ -319,56 +324,61 @@ public final class DatabaseDao_Impl implements DatabaseDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `user_profile` SET `id` = ?,`user` = ?,`email` = ?,`phone` = ?,`date_of_birth` = ?,`age` = ?,`genter` = ?,`password` = ?,`tracking` = ?,`trackingData` = ?,`last_update` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `user_profile` SET `id` = ?,`user_id` = ?,`user` = ?,`email` = ?,`phone` = ?,`date_of_birth` = ?,`age` = ?,`genter` = ?,`password` = ?,`tracking` = ?,`trackingData` = ?,`last_update` = ? WHERE `id` = ?";
       }
 
       @Override
       protected void bind(@NonNull final SupportSQLiteStatement statement,
           @NonNull final UserProfile entity) {
         statement.bindLong(1, entity.getId());
-        if (entity.getUser() == null) {
+        if (entity.getUserId() == null) {
           statement.bindNull(2);
         } else {
-          statement.bindString(2, entity.getUser());
+          statement.bindString(2, entity.getUserId());
         }
-        if (entity.getEmail() == null) {
+        if (entity.getUser() == null) {
           statement.bindNull(3);
         } else {
-          statement.bindString(3, entity.getEmail());
+          statement.bindString(3, entity.getUser());
         }
-        if (entity.getPhone() == null) {
+        if (entity.getEmail() == null) {
           statement.bindNull(4);
         } else {
-          statement.bindString(4, entity.getPhone());
+          statement.bindString(4, entity.getEmail());
         }
-        if (entity.getDateOfBirth() == null) {
+        if (entity.getPhone() == null) {
           statement.bindNull(5);
         } else {
-          statement.bindString(5, entity.getDateOfBirth());
+          statement.bindString(5, entity.getPhone());
         }
-        statement.bindLong(6, entity.getAge());
-        if (entity.getGenter() == null) {
-          statement.bindNull(7);
+        if (entity.getDateOfBirth() == null) {
+          statement.bindNull(6);
         } else {
-          statement.bindString(7, entity.getGenter());
+          statement.bindString(6, entity.getDateOfBirth());
         }
-        if (entity.getPassword() == null) {
+        statement.bindLong(7, entity.getAge());
+        if (entity.getGenter() == null) {
           statement.bindNull(8);
         } else {
-          statement.bindString(8, entity.getPassword());
+          statement.bindString(8, entity.getGenter());
         }
-        if (entity.getTracking() == null) {
+        if (entity.getPassword() == null) {
           statement.bindNull(9);
         } else {
-          statement.bindString(9, entity.getTracking());
+          statement.bindString(9, entity.getPassword());
         }
-        if (entity.getTrackingData() == null) {
+        if (entity.getTracking() == null) {
           statement.bindNull(10);
         } else {
-          statement.bindString(10, entity.getTrackingData());
+          statement.bindString(10, entity.getTracking());
         }
-        statement.bindLong(11, entity.getLastUpdate());
-        statement.bindLong(12, entity.getId());
+        if (entity.getTrackingData() == null) {
+          statement.bindNull(11);
+        } else {
+          statement.bindString(11, entity.getTrackingData());
+        }
+        statement.bindLong(12, entity.getLastUpdate());
+        statement.bindLong(13, entity.getId());
       }
     };
     this.__updateAdapterOfDailyData = new EntityDeletionOrUpdateAdapter<DailyData>(__db) {
@@ -688,6 +698,7 @@ public final class DatabaseDao_Impl implements DatabaseDao {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "user_id");
           final int _cursorIndexOfUser = CursorUtil.getColumnIndexOrThrow(_cursor, "user");
           final int _cursorIndexOfEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "email");
           final int _cursorIndexOfPhone = CursorUtil.getColumnIndexOrThrow(_cursor, "phone");
@@ -703,6 +714,12 @@ public final class DatabaseDao_Impl implements DatabaseDao {
             final UserProfile _item;
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
+            final String _tmpUserId;
+            if (_cursor.isNull(_cursorIndexOfUserId)) {
+              _tmpUserId = null;
+            } else {
+              _tmpUserId = _cursor.getString(_cursorIndexOfUserId);
+            }
             final String _tmpUser;
             if (_cursor.isNull(_cursorIndexOfUser)) {
               _tmpUser = null;
@@ -755,7 +772,7 @@ public final class DatabaseDao_Impl implements DatabaseDao {
             }
             final long _tmpLastUpdate;
             _tmpLastUpdate = _cursor.getLong(_cursorIndexOfLastUpdate);
-            _item = new UserProfile(_tmpId,_tmpUser,_tmpEmail,_tmpPhone,_tmpDateOfBirth,_tmpAge,_tmpGenter,_tmpPassword,_tmpTracking,_tmpTrackingData,_tmpLastUpdate);
+            _item = new UserProfile(_tmpId,_tmpUserId,_tmpUser,_tmpEmail,_tmpPhone,_tmpDateOfBirth,_tmpAge,_tmpGenter,_tmpPassword,_tmpTracking,_tmpTrackingData,_tmpLastUpdate);
             _result.add(_item);
           }
           return _result;
@@ -940,7 +957,7 @@ public final class DatabaseDao_Impl implements DatabaseDao {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "email");
+          final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "userId");
           final int _cursorIndexOfLastPeriodStartDate = CursorUtil.getColumnIndexOrThrow(_cursor, "lastPeriodStartDate");
           final int _cursorIndexOfDuringDays = CursorUtil.getColumnIndexOrThrow(_cursor, "duringDays");
           final int _cursorIndexOfUsualCycleLength = CursorUtil.getColumnIndexOrThrow(_cursor, "usualCycleLength");
@@ -950,11 +967,11 @@ public final class DatabaseDao_Impl implements DatabaseDao {
             final MenstrualDays _item;
             final int _tmpId;
             _tmpId = _cursor.getInt(_cursorIndexOfId);
-            final String _tmpEmail;
-            if (_cursor.isNull(_cursorIndexOfEmail)) {
-              _tmpEmail = null;
+            final String _tmpUserId;
+            if (_cursor.isNull(_cursorIndexOfUserId)) {
+              _tmpUserId = null;
             } else {
-              _tmpEmail = _cursor.getString(_cursorIndexOfEmail);
+              _tmpUserId = _cursor.getString(_cursorIndexOfUserId);
             }
             final String _tmpLastPeriodStartDate;
             if (_cursor.isNull(_cursorIndexOfLastPeriodStartDate)) {
@@ -968,7 +985,7 @@ public final class DatabaseDao_Impl implements DatabaseDao {
             _tmpUsualCycleLength = _cursor.getInt(_cursorIndexOfUsualCycleLength);
             final long _tmpSaveTime;
             _tmpSaveTime = _cursor.getLong(_cursorIndexOfSaveTime);
-            _item = new MenstrualDays(_tmpId,_tmpEmail,_tmpLastPeriodStartDate,_tmpDuringDays,_tmpUsualCycleLength,_tmpSaveTime);
+            _item = new MenstrualDays(_tmpId,_tmpUserId,_tmpLastPeriodStartDate,_tmpDuringDays,_tmpUsualCycleLength,_tmpSaveTime);
             _result.add(_item);
           }
           return _result;

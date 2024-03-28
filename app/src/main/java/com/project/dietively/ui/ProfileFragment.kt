@@ -62,9 +62,9 @@ class ProfileFragment : Fragment() {
         })
 
         viewModel.getUser.observe(viewLifecycleOwner) { user ->
-            val loginEmail = AppPreferences.loginEmail
-            if (loginEmail != null) {
-                userProfile = user.find { it.email == loginEmail }!!
+            val loginUuid = AppPreferences.loginUuid
+            if (loginUuid != null) {
+                userProfile = user.find { it.userId == loginUuid }!!
                 fillData(userProfile)
             }
         }
@@ -182,7 +182,7 @@ class ProfileFragment : Fragment() {
         builder.setTitle("Logout")
             .setMessage("Are you sure you want to logout?")
             .setPositiveButton("Yes") { dialog, which ->
-                AppPreferences.loginEmail = ""
+                AppPreferences.loginUuid = ""
                 findNavController().popBackStack(R.id.loginFragment, false)
             }
             .setNegativeButton("No") { dialog, which ->

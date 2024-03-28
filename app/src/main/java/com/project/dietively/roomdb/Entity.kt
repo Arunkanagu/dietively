@@ -13,6 +13,7 @@ import com.google.gson.annotations.SerializedName
 import com.project.dietively.util.getCurrentDate
 import java.time.LocalDate
 import java.util.Date
+import java.util.UUID
 
 @Keep
 @Entity(
@@ -22,6 +23,8 @@ import java.util.Date
 data class UserProfile(
     @SerializedName("id")
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo(name = "user_id")
+    var userId: String = "",
     var user: String = "",
     var email: String = "",
     var phone: String = "",
@@ -39,7 +42,6 @@ data class UserProfile(
 @Keep
 @Entity(tableName = "food_item")
 data class FoodItem(
-
     val name: String,
     val calories: String,
     val protein: String,
@@ -73,7 +75,8 @@ data class DailyData(
 data class MenstrualDays(
     @SerializedName("id")
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    var email: String = "",
+    @SerializedName("user_id")
+    var userId: String = "",
     @SerializedName("last_period_date")
     var lastPeriodStartDate: String = getCurrentDate(),
     @SerializedName("during_days")

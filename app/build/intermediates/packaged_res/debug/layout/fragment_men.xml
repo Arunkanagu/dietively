@@ -494,7 +494,7 @@
                 android:textColor="@color/app_black_100"
                 android:textStyle="bold"
                 android:layout_marginTop="@dimen/_8adp"
-                android:textSize="@dimen/_12asp"
+                android:textSize="@dimen/_16asp"
                 />
 
             <androidx.recyclerview.widget.RecyclerView

@@ -245,6 +245,7 @@ layout activity_main
 layout activity_splash
 layout calendar_day_item
 layout daily_food_layout
+layout dialog_change_data
 layout food_items
 layout fragment_dairy
 layout fragment_forget_pass

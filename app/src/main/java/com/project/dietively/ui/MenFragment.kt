@@ -49,7 +49,7 @@ class MenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.getUser.observe(viewLifecycleOwner) { u ->
-            userData = u.find { it.email == AppPreferences.loginEmail }!!
+            userData = u.find { it.userId == AppPreferences.loginUuid }!!
         }
         setLayoutView()
         setBasicWorkout()
@@ -160,6 +160,12 @@ class MenFragment : Fragment() {
         } else {
             resources.getStringArray(com.project.dietively.R.array.weight_loss_items)
         }
+        binding.weightTitle.text =
+            if (s == "gain") {
+                "Weight Gain"
+            }else{
+                "Weight Loss"
+            }
         binding.weightList.adapter = WeightAdapter(list, object : WeightAdapter.OnClickListener {
             override fun onClick(item: String) {
                 backToWeight = true

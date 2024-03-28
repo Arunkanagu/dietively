@@ -314,7 +314,7 @@
                         android:drawableStart="@drawable/ic_circle"
                         android:drawablePadding="@dimen/_4adp"
                         android:drawableTint="@color/period_day"
-                        android:text="Period Days" />
+                        android:text="Expacting Day" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -402,9 +402,9 @@
                         android:id="@+id/last_period_strat_date"
                         android:layout_width="@dimen/_100adp"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:letterSpacing=".02"
                         android:paddingVertical="@dimen/_6adp"
-                        android:paddingStart="@dimen/_6adp"
                         android:text="12/03/202"
                         android:textColor="@color/app_black_100"
                         android:textSize="@dimen/_12asp"
@@ -456,9 +456,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/_12adp"
+                        android:gravity="center"
                         android:letterSpacing=".02"
                         android:paddingVertical="@dimen/_6adp"
-                        android:paddingStart="@dimen/_6adp"
                         android:text="12"
                         android:textColor="@color/app_black_100"
                         android:textSize="@dimen/_12asp"
@@ -509,9 +509,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/_12adp"
+                        android:gravity="center"
                         android:letterSpacing=".02"
                         android:paddingVertical="@dimen/_6adp"
-                        android:paddingStart="@dimen/_6adp"
                         android:text="12"
                         android:textColor="@color/app_black_100"
                         android:textSize="@dimen/_12asp"

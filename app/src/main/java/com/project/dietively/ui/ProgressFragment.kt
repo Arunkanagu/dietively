@@ -103,7 +103,7 @@ class ProgressFragment : Fragment() {
         selectedDate = filteredDateStr
         binding.date.text = filteredDateStr
         val list =
-            dailyData.filter { filteredDateStr == getDateToString(it.date.toLong()) && it.userId == AppPreferences.loginEmail }
+            dailyData.filter { filteredDateStr == getDateToString(it.date.toLong()) && it.userId == AppPreferences.loginUuid }
 
         var calSum = 0f
         var proSum = 0f

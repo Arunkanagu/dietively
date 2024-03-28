@@ -35,13 +35,13 @@ public final class AppDatabase_Impl extends AppDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `user_profile` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user` TEXT NOT NULL, `email` TEXT NOT NULL, `phone` TEXT NOT NULL, `date_of_birth` TEXT NOT NULL, `age` INTEGER NOT NULL, `genter` TEXT NOT NULL, `password` TEXT NOT NULL, `tracking` TEXT NOT NULL, `trackingData` TEXT NOT NULL, `last_update` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `user_profile` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_id` TEXT NOT NULL, `user` TEXT NOT NULL, `email` TEXT NOT NULL, `phone` TEXT NOT NULL, `date_of_birth` TEXT NOT NULL, `age` INTEGER NOT NULL, `genter` TEXT NOT NULL, `password` TEXT NOT NULL, `tracking` TEXT NOT NULL, `trackingData` TEXT NOT NULL, `last_update` INTEGER NOT NULL)");
         db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_user_profile_email` ON `user_profile` (`email`)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `daily_data` (`date` TEXT NOT NULL, `user_id` TEXT NOT NULL, `food_item_name` TEXT NOT NULL, `calories` TEXT NOT NULL, `protein` TEXT NOT NULL, `carbohydrates` TEXT NOT NULL, `fat` TEXT NOT NULL, `add_count` INTEGER NOT NULL, PRIMARY KEY(`date`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS `food_item` (`name` TEXT NOT NULL, `calories` TEXT NOT NULL, `protein` TEXT NOT NULL, `fat` TEXT NOT NULL, `carbohydrates` TEXT NOT NULL, `type` TEXT NOT NULL, `img` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `menstrual_day_data` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email` TEXT NOT NULL, `lastPeriodStartDate` TEXT NOT NULL, `duringDays` INTEGER NOT NULL, `usualCycleLength` INTEGER NOT NULL, `saveTime` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `menstrual_day_data` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` TEXT NOT NULL, `lastPeriodStartDate` TEXT NOT NULL, `duringDays` INTEGER NOT NULL, `usualCycleLength` INTEGER NOT NULL, `saveTime` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '62475ea19b5304d4600eff9385b9ae97')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '13f0126953f00126959dd2f2c1a01e82')");
       }
 
       @Override
@@ -93,8 +93,9 @@ public final class AppDatabase_Impl extends AppDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsUserProfile = new HashMap<String, TableInfo.Column>(11);
+        final HashMap<String, TableInfo.Column> _columnsUserProfile = new HashMap<String, TableInfo.Column>(12);
         _columnsUserProfile.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUserProfile.put("user_id", new TableInfo.Column("user_id", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserProfile.put("user", new TableInfo.Column("user", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserProfile.put("email", new TableInfo.Column("email", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserProfile.put("phone", new TableInfo.Column("phone", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -153,7 +154,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         final HashMap<String, TableInfo.Column> _columnsMenstrualDayData = new HashMap<String, TableInfo.Column>(6);
         _columnsMenstrualDayData.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsMenstrualDayData.put("email", new TableInfo.Column("email", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMenstrualDayData.put("userId", new TableInfo.Column("userId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMenstrualDayData.put("lastPeriodStartDate", new TableInfo.Column("lastPeriodStartDate", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMenstrualDayData.put("duringDays", new TableInfo.Column("duringDays", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsMenstrualDayData.put("usualCycleLength", new TableInfo.Column("usualCycleLength", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -169,7 +170,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "62475ea19b5304d4600eff9385b9ae97", "d9d9c0de500e032c948b0b931006a83e");
+    }, "13f0126953f00126959dd2f2c1a01e82", "700646b2d15436051a73cee285b1194c");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

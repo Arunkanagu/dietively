@@ -75,7 +75,9 @@ class LoginFragment : Fragment() {
                 Log.d(TAG, "onViewCreated: $users")
                 if (data != null) {
                     if (data.password == binding.pass.text.toString().trim()) {
-                        AppPreferences.loginEmail = binding.email.text.toString().trim()
+                        AppPreferences.loginUuid = data.userId
+                        binding.email.setText("")
+                        binding.pass.setText("")
                         findNavController().navigate(R.id.homeFragment)
                     } else {
                         Toast.makeText(

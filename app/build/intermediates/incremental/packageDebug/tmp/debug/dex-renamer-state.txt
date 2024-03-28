@@ -1,4 +1,4 @@
-#Wed Mar 27 04:30:02 IST 2024
+#Fri Mar 29 02:46:02 IST 2024
 base.0=C\:\\Users\\Ranjith R\\Desktop\\Android project\\Dietively Project\\dietively\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Ranjith R\\Desktop\\Android project\\Dietively Project\\dietively\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\Ranjith R\\Desktop\\Android project\\Dietively Project\\dietively\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex

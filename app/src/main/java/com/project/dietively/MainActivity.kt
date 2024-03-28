@@ -1,10 +1,7 @@
 package com.project.dietively
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
@@ -15,7 +12,6 @@ import androidx.navigation.fragment.NavHostFragment
 import com.project.dietively.commen.AppPreferences
 import com.project.dietively.databinding.ActivityMainBinding
 import com.project.dietively.util.getFoodItemList
-import com.project.dietively.util.hideKeyboard
 import com.project.dietively.util.hideSystemUI
 import com.project.dietively.viewmodel.AppViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         navController =
             (supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment).navController
 
-        if (AppPreferences.loginEmail.isNullOrEmpty()){
+        if (AppPreferences.loginUuid.isNullOrEmpty()){
             navController.navigate(R.id.loginFragment)
         }else{
             navController.navigate(R.id.homeFragment)

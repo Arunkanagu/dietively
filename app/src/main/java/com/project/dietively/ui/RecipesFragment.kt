@@ -3,7 +3,6 @@ package com.project.dietively.ui
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.DialogInterface
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -27,7 +26,6 @@ import com.project.dietively.databinding.FragmentRecipesBinding
 import com.project.dietively.databinding.LayoutChildDailogBinding
 import com.project.dietively.roomdb.UserProfile
 import com.project.dietively.util.VaccinationDate
-import com.project.dietively.util.VaccinationSchedule
 import com.project.dietively.util.VaccinationScheduleData
 import com.project.dietively.util.addMonthsToDate
 import com.project.dietively.util.addYearsToDate
@@ -36,7 +34,6 @@ import com.project.dietively.util.convertStringToDate
 import com.project.dietively.util.extractNumbersFromList
 import com.project.dietively.util.extractYearsFromString
 import com.project.dietively.viewmodel.AppViewModel
-import java.time.LocalDate
 import java.util.Calendar
 import java.util.Date
 import kotlin.collections.ArrayList
@@ -69,7 +66,7 @@ class RecipesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getUser.observe(viewLifecycleOwner) { u ->
-            userData = u.find { it.email == AppPreferences.loginEmail }
+            userData = u.find { it.userId == AppPreferences.loginUuid }
             if (userData != null) {
                 if (userData!!.tracking.isEmpty()) {
                     if (userData!!.age > 5) {
@@ -90,7 +87,7 @@ class RecipesFragment : Fragment() {
                             userData!!.trackingData = TextUtils.join(",", arrayOf(userData!!.user, userData!!.dateOfBirth))
                         }
                         userData?.let { it1 -> viewModel.insertUser(it1) }
-                        createCustomAlertDialog()
+                        //createCustomAlertDialog()
                     }
                 } else {
                     viewControl(userData!!.tracking)
@@ -246,7 +243,7 @@ class RecipesFragment : Fragment() {
 
                 options[1] -> {}
                 options[2] -> {
-                    createCustomAlertDialog()
+                    //createCustomAlertDialog()
                 }
             }
 

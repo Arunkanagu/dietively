@@ -18,6 +18,7 @@ import com.project.dietively.viewmodel.AppViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import java.util.UUID
 
 class SignUpFragment : Fragment() {
 
@@ -51,6 +52,8 @@ class SignUpFragment : Fragment() {
         binding.constraintLayout.setOnClickListener { hideKeyboard(view) }
         arrayLayout.add(binding.info1)
         arrayLayout.add(binding.info2)
+        binding.dateOfBirth.isClickable = false
+        binding.dateOfBirth.isFocusable = false
         viewControl(0)
         binding.next.setOnClickListener {
             binding.userTextField1.error = ""
@@ -61,29 +64,32 @@ class SignUpFragment : Fragment() {
             val email = binding.email.text.toString()
             val mobile = binding.mobile.text.toString()
             val pass = binding.pass.text.toString()
-            if (user.isNullOrEmpty() || email.isNullOrEmpty() || mobile.isNullOrEmpty() || pass.isNullOrEmpty()) {
+            if (user.isEmpty() || email.isEmpty() || mobile.isEmpty() || pass.isEmpty()) {
 
-                if (user.isNullOrEmpty()) {
+                if (user.isEmpty()) {
                     binding.userTextField1.error = "enter the name"
                 }
-                if (email.isNullOrEmpty()) {
+                if (email.isEmpty()) {
                     binding.emailTextField.error = "enter the email"
                 }
-                if (mobile.isNullOrEmpty()) {
-
+                if (mobile.isEmpty()) {
                     binding.mobileTextField.error = "enter the mobile number"
                 }
-                if (pass.isNullOrEmpty()) {
-
+                if (pass.isEmpty()) {
                     binding.passTextField.error = "enter the password"
                 }
 
             } else {
-                userDate.user = user
-                userDate.email = email
-                userDate.phone = mobile
-                userDate.password = pass
-                viewControl(1)
+                if (viewModel.getUser.value?.any { it.email == email } == true){
+                    viewModel.toastMsgStr.postValue("This email Id already registered")
+                }else{
+                    userDate.userId = UUID.randomUUID().toString()
+                    userDate.user = user
+                    userDate.email = email
+                    userDate.phone = mobile
+                    userDate.password = pass
+                    viewControl(1)
+                }
             }
         }
         binding.dateOfBirthBtn.setOnClickListener {
