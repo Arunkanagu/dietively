@@ -14,6 +14,7 @@ import com.project.dietively.R
 import com.project.dietively.databinding.FragmentSignUpBinding
 import com.project.dietively.roomdb.UserProfile
 import com.project.dietively.util.hideKeyboard
+import com.project.dietively.util.isValidEmail
 import com.project.dietively.viewmodel.AppViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -31,6 +32,7 @@ class SignUpFragment : Fragment() {
 
     private val viewModel: AppViewModel by activityViewModels()
     private var selectedGender = "Male"
+    private var userProfileList: ArrayList<UserProfile> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -44,6 +46,12 @@ class SignUpFragment : Fragment() {
         binding.goToLogin.setOnClickListener {
             findNavController().popBackStack(R.id.loginFragment, false)
         }
+
+        viewModel.getUser.observe(viewLifecycleOwner) {
+            userProfileList = it as ArrayList<UserProfile>
+            Log.d(TAG, "onViewCreated: $ {userProfileList}")
+        }
+
         genderSelection()
 
         binding.info1.setOnClickListener { hideKeyboard(view) }
@@ -64,32 +72,36 @@ class SignUpFragment : Fragment() {
             val email = binding.email.text.toString()
             val mobile = binding.mobile.text.toString()
             val pass = binding.pass.text.toString()
-            if (user.isEmpty() || email.isEmpty() || mobile.isEmpty() || pass.isEmpty()) {
 
-                if (user.isEmpty()) {
-                    binding.userTextField1.error = "enter the name"
-                }
-                if (email.isEmpty()) {
-                    binding.emailTextField.error = "enter the email"
-                }
-                if (mobile.isEmpty()) {
-                    binding.mobileTextField.error = "enter the mobile number"
-                }
-                if (pass.isEmpty()) {
-                    binding.passTextField.error = "enter the password"
-                }
+            var allDone = true
+            if (user.isEmpty()) {
+                binding.userTextField1.error = "enter the name"
+                allDone = false
+            }
 
-            } else {
-                if (viewModel.getUser.value?.any { it.email == email } == true){
-                    viewModel.toastMsgStr.postValue("This email Id already registered")
-                }else{
-                    userDate.userId = UUID.randomUUID().toString()
-                    userDate.user = user
-                    userDate.email = email
-                    userDate.phone = mobile
-                    userDate.password = pass
-                    viewControl(1)
-                }
+            if (mobile.length != 10) {
+                binding.mobileTextField.error = "Enter the valid mobile number"
+                allDone = false
+            }
+            if (mobile.length == 12 && !mobile.startsWith("91")) {
+                binding.mobileTextField.error = "Enter the valid mobile number"
+                allDone = false
+            }
+            if (!binding.email.text.toString().isValidEmail()) {
+                binding.emailTextField.error = "Enter the valid Email ID"
+                allDone = false
+            }
+            if (userProfileList.any { it.email == email }) {
+                viewModel.toastMsgStr.postValue("This Email-ID already registered")
+                allDone = false
+            }
+            if (allDone) {
+                userDate.userId = UUID.randomUUID().toString()
+                userDate.user = user
+                userDate.email = email
+                userDate.phone = mobile
+                userDate.password = pass
+                viewControl(1)
             }
         }
         binding.dateOfBirthBtn.setOnClickListener {
@@ -107,6 +119,8 @@ class SignUpFragment : Fragment() {
             findNavController().popBackStack()
         }
     }
+
+
 
     private fun viewControl(point: Int = 0) {
 
