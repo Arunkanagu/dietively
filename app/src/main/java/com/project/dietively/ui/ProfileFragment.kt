@@ -35,6 +35,8 @@ class ProfileFragment : Fragment() {
 
     private var userProfile: UserProfile = UserProfile()
 
+    private var userList:ArrayList<UserProfile> = arrayListOf()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -62,6 +64,8 @@ class ProfileFragment : Fragment() {
         })
 
         viewModel.getUser.observe(viewLifecycleOwner) { user ->
+            userList.clear()
+            userList.addAll(user)
             val loginUuid = AppPreferences.loginUuid
             if (loginUuid != null) {
                 userProfile = user.find { it.userId == loginUuid }!!
@@ -112,16 +116,20 @@ class ProfileFragment : Fragment() {
                         userMobileNumber
                     )
                 ) {
-                    temp.user = userName
-                    temp.age = userAge
-                    temp.dateOfBirth = userDateOfBirth
-                    temp.email = userEmail
-                    temp.phone = userMobileNumber
+                    if (userList.any { it.email == userEmail }){
+                        viewModel.toastMsgStr.postValue("This Email ID already registered.")
+                    }else {
+                        temp.user = userName
+                        temp.age = userAge
+                        temp.dateOfBirth = userDateOfBirth
+                        temp.email = userEmail
+                        temp.phone = userMobileNumber
 
-                    // Insert user data only if all fields are valid
-                    viewModel.insertUser(temp)
-                    binding.showDetailsLayour.visibility = View.VISIBLE
-                    binding.editProfileLayout.visibility = View.GONE
+                        // Insert user data only if all fields are valid
+                        viewModel.insertUser(temp)
+                        binding.showDetailsLayour.visibility = View.VISIBLE
+                        binding.editProfileLayout.visibility = View.GONE
+                    }
                 } else
                     Toast.makeText(
                         context,
@@ -210,15 +218,15 @@ class ProfileFragment : Fragment() {
     }
 
     // Email validation function
-    fun isValidEmail(email: String): Boolean {
+    private fun isValidEmail(email: String): Boolean {
         val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
         return email.matches(emailPattern.toRegex())
     }
 
     // Mobile number validation function
-    fun isValidPhoneNumber(phone: String): Boolean {
+    private fun isValidPhoneNumber(phone: String): Boolean {
         val phonePattern = "\\d{10}"
-        return phone.matches(phonePattern.toRegex())
+        return phone.length == 10 || (phone.length == 12 && phone.startsWith("91"))
     }
 
     override fun onDestroyView() {

@@ -4,7 +4,7 @@
             "outputFile": "com.project.dietively.test.app-mergeDebugAndroidTestResources-3:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ranjith R\\.gradle\\caches\\transforms-3\\4ac1f4c91bea7b6dc93d38eca36107e0\\transformed\\core-1.5.0\\res\\values\\values.xml",
+                    "source": "C:\\Users\\arunk\\.gradle\\caches\\transforms-3\\4ac1f4c91bea7b6dc93d38eca36107e0\\transformed\\core-1.5.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,11",
                         "startColumns": "0,0",

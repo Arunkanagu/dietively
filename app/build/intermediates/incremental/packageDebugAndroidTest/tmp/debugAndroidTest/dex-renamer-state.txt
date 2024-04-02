@@ -1,7 +1,7 @@
-#Wed Mar 27 12:17:32 IST 2024
-base.0=C\:\\Users\\Ranjith R\\Desktop\\Android project\\Dietively Project\\dietively\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
-base.1=C\:\\Users\\Ranjith R\\Desktop\\Android project\\Dietively Project\\dietively\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
-base.2=C\:\\Users\\Ranjith R\\Desktop\\Android project\\Dietively Project\\dietively\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\12\\classes.dex
+#Tue Apr 02 20:59:31 IST 2024
+base.0=E\:\\Arun Cooper\\Office\\taken\\project\\Dietively Project with vestion\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=E\:\\Arun Cooper\\Office\\taken\\project\\Dietively Project with vestion\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.2=E\:\\Arun Cooper\\Office\\taken\\project\\Dietively Project with vestion\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\12\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=12/classes.dex

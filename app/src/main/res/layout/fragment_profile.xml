@@ -340,6 +340,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".60"
+                android:inputType="date"
                 android:drawableEnd="@drawable/ic_calendar"
                 android:drawableTint="@color/app_green_100"
                 android:maxLines="1" />
@@ -450,6 +451,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".60"
                 android:inputType="phone"
+                android:maxLength="10"
                 android:imeOptions="actionDone"
                 android:maxLines="1" />
         </LinearLayout>

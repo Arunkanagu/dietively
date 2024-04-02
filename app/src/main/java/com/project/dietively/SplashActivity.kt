@@ -1,10 +1,12 @@
 package com.project.dietively
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.project.dietively.commen.AppPreferences
@@ -29,23 +31,23 @@ class SplashActivity : AppCompatActivity() {
 
             }
 
+            @RequiresApi(Build.VERSION_CODES.O)
             override fun onFinish() {
                 Log.d("SplashActivity", "onFinish: ${AppPreferences.expDate}")
                 if (AppPreferences.expDate.isNullOrEmpty()) {
                     val calendar = Calendar.getInstance()
                     calendar.add(Calendar.DAY_OF_YEAR, 7)
                     AppPreferences.expDate = "${calendar.timeInMillis}"
+                }
+                val checkDate = isToday(AppPreferences.expDate.toString().toLong())
+                Log.i("SplashActivity", "onFinish: $checkDate")
+                if (checkDate) {
+                    Toast.makeText(DietivelyApp.instance, "App was expired", Toast.LENGTH_SHORT)
+                        .show()
                 } else {
-                    val checkDate = isToday(AppPreferences.expDate.toString().toLong())
-                    Log.i("SplashActivity", "onFinish: $checkDate")
-                    if (checkDate) {
-                        Toast.makeText(DietivelyApp.instance, "App was expired", Toast.LENGTH_SHORT)
-                            .show()
-                    } else {
-                        val intent = Intent(this@SplashActivity, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
+                    val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
 
             }
@@ -53,11 +55,15 @@ class SplashActivity : AppCompatActivity() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun isToday(longDate: Long): Boolean {
         val today = LocalDate.now()
         val dateToCheck =
             Instant.ofEpochMilli(longDate).atZone(ZoneId.systemDefault()).toLocalDate()
-        Log.d("SplashActivity", "isToday: ${dateToCheck.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))}")
+        Log.d(
+            "SplashActivity",
+            "isToday: ${dateToCheck.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))}"
+        )
         return dateToCheck < today
     }
 
