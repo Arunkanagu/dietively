@@ -91,6 +91,10 @@ class SignUpFragment : Fragment() {
                 binding.emailTextField.error = "Enter the valid Email ID"
                 allDone = false
             }
+            if (binding.pass.text.toString().length < 8) {
+                binding.passTextField.error = "Enter the valid password"
+                allDone = false
+            }
             if (userProfileList.any { it.email == email }) {
                 viewModel.toastMsgStr.postValue("This Email-ID already registered")
                 allDone = false
