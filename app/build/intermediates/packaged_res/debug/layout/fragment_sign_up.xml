@@ -172,6 +172,7 @@
                     android:imeOptions="actionDone"
                     android:inputType="textVisiblePassword"
                     android:textColor="@color/white"
+                    android:maxLength="16"
                     android:textSize="@dimen/_12asp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -276,7 +277,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
-                    android:inputType="textEmailAddress"
+                    android:inputType="none"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_12asp" />
 

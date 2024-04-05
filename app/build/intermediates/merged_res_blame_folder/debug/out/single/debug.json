@@ -244,6 +244,10 @@
         "source": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\raw\\image18.jpg"
     },
     {
+        "merged": "com.project.dietively.app-merged_res-52:/layout_fragment_sign_up.xml.flat",
+        "source": "com.project.dietively.app-main-54:/layout/fragment_sign_up.xml"
+    },
+    {
         "merged": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_woman.png.flat",
         "source": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\woman.png"
     },
@@ -546,10 +550,6 @@
     {
         "merged": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\drawable_ic_gym_checklist.png.flat",
         "source": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\drawable\\ic_gym_checklist.png"
-    },
-    {
-        "merged": "com.project.dietively.app-merged_res-52:/layout_fragment_profile.xml.flat",
-        "source": "com.project.dietively.app-main-54:/layout/fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-merged_res-52:\\raw_image27.jpg.flat",

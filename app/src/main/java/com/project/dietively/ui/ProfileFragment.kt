@@ -82,6 +82,10 @@ class ProfileFragment : Fragment() {
         binding.editDate.inputType = InputType.TYPE_NULL
         binding.editAge.inputType = InputType.TYPE_NULL
 
+        binding.editDate.isClickable = false
+        binding.editDate.isFocusable = false
+        binding.editAge.isClickable = false
+        binding.editAge.isFocusable = false
 
         binding.editDate.setOnClickListener {
             showDatePickerDialog()
@@ -118,6 +122,8 @@ class ProfileFragment : Fragment() {
                 ) {
                     if (userList.any { it.email == userEmail }){
                         viewModel.toastMsgStr.postValue("This Email ID already registered.")
+                    }else if (userAge < 122){
+                        viewModel.toastMsgStr.postValue("Invalid age")
                     }else {
                         temp.user = userName
                         temp.age = userAge
@@ -162,7 +168,8 @@ class ProfileFragment : Fragment() {
             month,
             day
         )
-
+        // Set maximum date
+        datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
         // Show the date picker dialog
         datePickerDialog.show()
     }

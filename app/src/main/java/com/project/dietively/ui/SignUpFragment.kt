@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.activity.OnBackPressedCallback
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -52,6 +54,17 @@ class SignUpFragment : Fragment() {
             Log.d(TAG, "onViewCreated: $ {userProfileList}")
         }
 
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if (binding.info1.isVisible) {
+                        findNavController().popBackStack(R.id.loginFragment, false)
+                    } else {
+                        viewControl(0)
+                    }
+                }
+            })
+
         genderSelection()
 
         binding.info1.setOnClickListener { hideKeyboard(view) }
@@ -62,6 +75,8 @@ class SignUpFragment : Fragment() {
         arrayLayout.add(binding.info2)
         binding.dateOfBirth.isClickable = false
         binding.dateOfBirth.isFocusable = false
+        binding.age.isClickable = false
+        binding.age.isFocusable = false
         viewControl(0)
         binding.next.setOnClickListener {
             binding.userTextField1.error = ""
@@ -91,8 +106,9 @@ class SignUpFragment : Fragment() {
                 binding.emailTextField.error = "Enter the valid Email ID"
                 allDone = false
             }
-            if (binding.pass.text.toString().length < 8) {
-                binding.passTextField.error = "Enter the valid password"
+            if (binding.pass.text.toString().length !in 8..16) {
+                binding.passTextField.error =
+                    "Incorrect password! (Your password must be 8 to 16 characters long)"
                 allDone = false
             }
             if (userProfileList.any { it.email == email }) {
@@ -109,21 +125,36 @@ class SignUpFragment : Fragment() {
             }
         }
         binding.dateOfBirthBtn.setOnClickListener {
+            binding.ageTextField.error = ""
+            binding.dobTextField.error = ""
+            showDatePickerDialog()
+        }
+        binding.dateOfBirth.setOnClickListener {
+            binding.ageTextField.error = ""
+            binding.dobTextField.error = ""
+            showDatePickerDialog()
+        }
+        binding.age.setOnClickListener {
+            binding.ageTextField.error = ""
+            binding.dobTextField.error = ""
             showDatePickerDialog()
         }
         binding.signUp.setOnClickListener {
-            if (binding.dateOfBirth.text.toString().isNullOrEmpty()) {
-                binding.dobTextField.error = ""
+            if (binding.dateOfBirth.text.toString().isEmpty()) {
+                binding.dobTextField.error = "select your date of birth"
+            } else if (binding.age.text.toString().toInt() < 122) {
+                binding.ageTextField.error = "invalid age, select your date of birth "
+            } else {
+                userDate.dateOfBirth = binding.dateOfBirth.text.toString()
+                userDate.age = binding.age.text.toString().toInt()
+                userDate.genter = selectedGender
+                viewModel.insertUser(userDate)
+                findNavController().popBackStack()
             }
-            userDate.dateOfBirth = binding.dateOfBirth.text.toString()
-            userDate.age = binding.age.text.toString().toInt()
-            userDate.genter = selectedGender
-            Log.d(TAG, "onViewCreated: ${userDate}")
-            viewModel.insertUser(userDate)
-            findNavController().popBackStack()
+
+
         }
     }
-
 
 
     private fun viewControl(point: Int = 0) {
@@ -151,6 +182,8 @@ class SignUpFragment : Fragment() {
             month,
             day
         )
+        // Set maximum date
+        datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
 
         // Show the date picker dialog
         datePickerDialog.show()

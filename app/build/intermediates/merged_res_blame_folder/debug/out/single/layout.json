@@ -12,6 +12,10 @@
         "source": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\layout_vaccination.xml"
     },
     {
+        "merged": "com.project.dietively.app-mergeDebugResources-51:/layout/fragment_sign_up.xml",
+        "source": "com.project.dietively.app-main-54:/layout/fragment_sign_up.xml"
+    },
+    {
         "merged": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_recipes.xml",
         "source": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_recipes.xml"
     },
@@ -82,10 +86,6 @@
     {
         "merged": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\fragment_splash.xml",
         "source": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-main-54:\\layout\\fragment_splash.xml"
-    },
-    {
-        "merged": "com.project.dietively.app-mergeDebugResources-51:/layout/fragment_profile.xml",
-        "source": "com.project.dietively.app-main-54:/layout/fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\arunk\\.gradle\\daemon\\8.2\\com.project.dietively.app-mergeDebugResources-51:\\layout\\daily_food_layout.xml",
