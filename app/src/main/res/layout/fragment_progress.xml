@@ -258,7 +258,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/_12adp"
-                android:text="Today Concume List :"
+                android:text="Consumed food List :"
                 android:textSize="@dimen/_12adp"
                 android:textStyle="bold" />
 
