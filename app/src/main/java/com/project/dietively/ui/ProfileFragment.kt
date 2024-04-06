@@ -35,7 +35,7 @@ class ProfileFragment : Fragment() {
 
     private var userProfile: UserProfile = UserProfile()
 
-    private var userList:ArrayList<UserProfile> = arrayListOf()
+    private var userList: ArrayList<UserProfile> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -51,17 +51,19 @@ class ProfileFragment : Fragment() {
             findNavController().popBackStack()
         }
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (binding.showDetailsLayour.isVisible){
-                    findNavController().popBackStack()
-                }else{
-                    binding.showDetailsLayour.visibility = View.VISIBLE
-                    binding.editProfileLayout.visibility = View.GONE
-                }
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if (binding.showDetailsLayour.isVisible) {
+                        findNavController().popBackStack()
+                    } else {
+                        binding.showDetailsLayour.visibility = View.VISIBLE
+                        binding.editProfileLayout.visibility = View.GONE
+                    }
 
-            }
-        })
+                }
+            })
 
         viewModel.getUser.observe(viewLifecycleOwner) { user ->
             userList.clear()
@@ -105,6 +107,18 @@ class ProfileFragment : Fragment() {
                 editMobNo.setText(userProfile.phone)
             }
         }
+
+        binding.cancelBtn.setOnClickListener {
+            binding.showDetailsLayour.visibility = View.VISIBLE
+            binding.editProfileLayout.visibility = View.GONE
+            with(binding) {
+                editName.setText(userProfile.user)
+                editAge.setText(userProfile.age.toString())
+                editDate.setText(userProfile.dateOfBirth)
+                editEmail.setText(userProfile.email)
+                editMobNo.setText(userProfile.phone)
+            }
+        }
         binding.saveBtn.setOnClickListener {
             val temp = userProfile
             with(binding) {
@@ -120,11 +134,11 @@ class ProfileFragment : Fragment() {
                         userMobileNumber
                     )
                 ) {
-                    if (userList.any { it.email == userEmail }){
+                    if (userList.any { it.email == userEmail && userProfile.email != userEmail }) {
                         viewModel.toastMsgStr.postValue("This Email ID already registered.")
-                    }else if (userAge < 122){
+                    } else if (userAge > 122) {
                         viewModel.toastMsgStr.postValue("Invalid age")
-                    }else {
+                    } else {
                         temp.user = userName
                         temp.age = userAge
                         temp.dateOfBirth = userDateOfBirth
@@ -147,7 +161,7 @@ class ProfileFragment : Fragment() {
 
     }
 
-    private fun showDatePickerDialog(dateString:String = binding.editDate.text.toString()) {
+    private fun showDatePickerDialog(dateString: String = binding.editDate.text.toString()) {
         val calendar = Calendar.getInstance()
 
         val dateParts = dateString.split("/")

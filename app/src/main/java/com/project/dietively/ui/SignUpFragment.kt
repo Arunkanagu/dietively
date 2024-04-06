@@ -142,7 +142,7 @@ class SignUpFragment : Fragment() {
         binding.signUp.setOnClickListener {
             if (binding.dateOfBirth.text.toString().isEmpty()) {
                 binding.dobTextField.error = "select your date of birth"
-            } else if (binding.age.text.toString().toInt() < 122) {
+            } else if (binding.age.text.toString().toInt() >= 122) {
                 binding.ageTextField.error = "invalid age, select your date of birth "
             } else {
                 userDate.dateOfBirth = binding.dateOfBirth.text.toString()
