@@ -4077,6 +4077,7 @@ id cal
 id callMeasure
 id calorie
 id calories
+id cancel_btn
 id cancel_button
 id car
 id carbohydrates

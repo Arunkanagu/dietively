@@ -64,7 +64,7 @@
         android:gravity="top"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/_12adp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
@@ -254,6 +254,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_button"
                 android:text="Edit Profile"
+                android:textAllCaps="false"
+                android:layout_marginBottom="@dimen/_2adp"
                 android:textColor="@color/app_white_100"
                 android:textSize="@dimen/_12adp"
                 android:textStyle="bold" />
@@ -267,6 +269,7 @@
         android:layout_height="0dp"
         android:gravity="top"
         android:orientation="vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3">
 
@@ -495,15 +498,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom"
+            android:weightSum="1"
+            android:orientation="horizontal"
             android:paddingHorizontal="@dimen/_12adp"
             android:paddingVertical="@dimen/_16adp">
 
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/save_btn"
-                android:layout_width="match_parent"
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_button"
-                android:text="Save Profile"
+                android:text="Cancel"
+                android:layout_marginBottom="@dimen/_2adp"
+                android:backgroundTint="@color/round_edit_text_board"
+                android:layout_weight=".5"
+                android:textAllCaps="false"
+                android:layout_marginEnd="@dimen/_4adp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12adp"
+                android:textStyle="bold" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_btn"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_marginBottom="@dimen/_2adp"
+                android:layout_marginStart="@dimen/_4adp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button"
+                android:text="Update"
+                android:textAllCaps="false"
                 android:textColor="@color/app_white_100"
                 android:textSize="@dimen/_12adp"
                 android:textStyle="bold" />

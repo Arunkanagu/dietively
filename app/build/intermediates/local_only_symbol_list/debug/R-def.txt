@@ -95,6 +95,7 @@ id basic_status_8
 id cal
 id calorie
 id calories
+id cancel_btn
 id car
 id carbohydrates
 id card

@@ -13,6 +13,7 @@ object AppPreferences {
     private val EXP_DATE = Pair("exp_date", null)
 
 
+
     fun init(context: Context = DietivelyApp.instance) {
         preferences = context.getSharedPreferences(NAME, Context.MODE_PRIVATE)
     }

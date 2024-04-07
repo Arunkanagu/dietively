@@ -31,6 +31,9 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final ImageView back;
 
   @NonNull
+  public final AppCompatButton cancelBtn;
+
+  @NonNull
   public final TextView dob;
 
   @NonNull
@@ -88,17 +91,19 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView textView;
 
   private FragmentProfileBinding(@NonNull ConstraintLayout rootView, @NonNull TextView age,
-      @NonNull ImageView back, @NonNull TextView dob, @NonNull AppCompatEditText editAge,
-      @NonNull AppCompatButton editBtn, @NonNull AppCompatEditText editDate,
-      @NonNull AppCompatEditText editEmail, @NonNull AppCompatEditText editGender,
-      @NonNull AppCompatEditText editMobNo, @NonNull AppCompatEditText editName,
-      @NonNull LinearLayout editProfileLayout, @NonNull TextView email, @NonNull TextView gender,
-      @NonNull Guideline guideline3, @NonNull LinearLayout linearLayout4, @NonNull ImageView logout,
-      @NonNull TextView mobileNo, @NonNull TextView name, @NonNull AppCompatButton saveBtn,
+      @NonNull ImageView back, @NonNull AppCompatButton cancelBtn, @NonNull TextView dob,
+      @NonNull AppCompatEditText editAge, @NonNull AppCompatButton editBtn,
+      @NonNull AppCompatEditText editDate, @NonNull AppCompatEditText editEmail,
+      @NonNull AppCompatEditText editGender, @NonNull AppCompatEditText editMobNo,
+      @NonNull AppCompatEditText editName, @NonNull LinearLayout editProfileLayout,
+      @NonNull TextView email, @NonNull TextView gender, @NonNull Guideline guideline3,
+      @NonNull LinearLayout linearLayout4, @NonNull ImageView logout, @NonNull TextView mobileNo,
+      @NonNull TextView name, @NonNull AppCompatButton saveBtn,
       @NonNull LinearLayout showDetailsLayour, @NonNull TextView textView) {
     this.rootView = rootView;
     this.age = age;
     this.back = back;
+    this.cancelBtn = cancelBtn;
     this.dob = dob;
     this.editAge = editAge;
     this.editBtn = editBtn;
@@ -156,6 +161,12 @@ public final class FragmentProfileBinding implements ViewBinding {
       id = R.id.back;
       ImageView back = ViewBindings.findChildViewById(rootView, id);
       if (back == null) {
+        break missingId;
+      }
+
+      id = R.id.cancel_btn;
+      AppCompatButton cancelBtn = ViewBindings.findChildViewById(rootView, id);
+      if (cancelBtn == null) {
         break missingId;
       }
 
@@ -273,10 +284,10 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentProfileBinding((ConstraintLayout) rootView, age, back, dob, editAge,
-          editBtn, editDate, editEmail, editGender, editMobNo, editName, editProfileLayout, email,
-          gender, guideline3, linearLayout4, logout, mobileNo, name, saveBtn, showDetailsLayour,
-          textView);
+      return new FragmentProfileBinding((ConstraintLayout) rootView, age, back, cancelBtn, dob,
+          editAge, editBtn, editDate, editEmail, editGender, editMobNo, editName, editProfileLayout,
+          email, gender, guideline3, linearLayout4, logout, mobileNo, name, saveBtn,
+          showDetailsLayour, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
