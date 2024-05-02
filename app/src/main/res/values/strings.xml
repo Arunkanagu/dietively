@@ -70,6 +70,13 @@
     <!-- Weight Loss Strings -->
     <string name="weight_loss_title">Weight Loss</string>
     <string name="health_str">Health</string>
+    <string name="bmi_str">BMI Calculation</string>
+    <string name="select_age_str">Select Your Age</string>
+    <string name="gender_str">Gender</string>
+    <string name="weight_str">Enter Your Weight in KiloGrams</string>
+    <string name="height_str">Enter Your Height in Centimeters</string>
+    <string name="calu_str">Calculate the BMI</string>
+    <string name="bmi_calculation">BMI Calculation</string>
     <string-array name="weight_loss_items">
         <item>Eat varied, colourful, nutritionally dense foods</item>
         <item>Engage in regular physical activity and exercise</item>

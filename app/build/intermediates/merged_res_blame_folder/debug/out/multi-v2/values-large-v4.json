@@ -4,7 +4,7 @@
             "outputFile": "com.project.dietively.app-mergeDebugResources-50:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\arunk\\.gradle\\caches\\transforms-3\\ad8fb8ba9c2ad4a2774c8a369b910b28\\transformed\\material-1.11.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Ranjith R\\.gradle\\caches\\transforms-3\\ad8fb8ba9c2ad4a2774c8a369b910b28\\transformed\\material-1.11.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\arunk\\.gradle\\caches\\transforms-3\\ec2186493f2aa76c59074c02d43ac2a4\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Ranjith R\\.gradle\\caches\\transforms-3\\ec2186493f2aa76c59074c02d43ac2a4\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

@@ -85,6 +85,7 @@ class MenFragment : Fragment() {
         binding.webPlanBtn.setOnClickListener { setLayoutView("web") }
         binding.weightLoss.setOnClickListener { setLayoutView("weight_loss") }
         binding.weightGain.setOnClickListener { setLayoutView("weight_gain") }
+        binding.bmiBtn.setOnClickListener { findNavController().navigate(R.id.weightFragment) }
         binding.clear.setOnClickListener { _ ->
             userData!!.trackingData = ""
             userData!!.tracking = ""

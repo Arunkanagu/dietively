@@ -1,6 +1,5 @@
 package com.project.dietively.roomdb
 
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.ColorRes
@@ -11,9 +10,7 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.project.dietively.util.getCurrentDate
-import java.time.LocalDate
 import java.util.Date
-import java.util.UUID
 
 @Keep
 @Entity(
@@ -105,3 +102,7 @@ data class CalendarDay(
     @ColorRes
     var backgroundColor: Int = android.R.color.transparent
 )
+
+data class BMIResult(var bmi: Double = 0.0, var category: String = "")
+
+data class Person(var weight: Double, var height: Double, var gender: String, var age: Int)

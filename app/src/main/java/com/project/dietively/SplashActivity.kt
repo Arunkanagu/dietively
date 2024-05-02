@@ -41,15 +41,14 @@ class SplashActivity : AppCompatActivity() {
                 }
                 val checkDate = isToday(AppPreferences.expDate.toString().toLong())
                 Log.i("SplashActivity", "onFinish: $checkDate")
-                if (checkDate) {
+                /*if (checkDate) {
                     Toast.makeText(DietivelyApp.instance, "App was expired", Toast.LENGTH_SHORT)
                         .show()
-                } else {
+                } else {*/
                     val intent = Intent(this@SplashActivity, MainActivity::class.java)
                     startActivity(intent)
                     finish()
-                }
-
+                //}
             }
         }
 

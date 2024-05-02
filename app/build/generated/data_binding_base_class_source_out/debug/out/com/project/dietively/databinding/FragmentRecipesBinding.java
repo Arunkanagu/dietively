@@ -27,10 +27,19 @@ public final class FragmentRecipesBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final LinearLayout babyWeight;
+
+  @NonNull
   public final ImageView back;
 
   @NonNull
   public final ScrollView childLayout;
+
+  @NonNull
+  public final ScrollView childMenuLayout;
+
+  @NonNull
+  public final ScrollView childWeightLayout;
 
   @NonNull
   public final ImageView clear;
@@ -72,6 +81,9 @@ public final class FragmentRecipesBinding implements ViewBinding {
   public final TextView textView;
 
   @NonNull
+  public final LinearLayout vaccination;
+
+  @NonNull
   public final RecyclerView vaccinationDateList;
 
   @NonNull
@@ -83,17 +95,22 @@ public final class FragmentRecipesBinding implements ViewBinding {
   @NonNull
   public final ViewPager2 viewPager;
 
-  private FragmentRecipesBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView back,
-      @NonNull ScrollView childLayout, @NonNull ImageView clear, @NonNull TextView dob,
-      @NonNull FloatingActionButton fab, @NonNull Guideline guideline3, @NonNull TextView heading1,
-      @NonNull TextView heading2, @NonNull LinearLayout idelLayout, @NonNull TextView information,
+  private FragmentRecipesBinding(@NonNull ConstraintLayout rootView,
+      @NonNull LinearLayout babyWeight, @NonNull ImageView back, @NonNull ScrollView childLayout,
+      @NonNull ScrollView childMenuLayout, @NonNull ScrollView childWeightLayout,
+      @NonNull ImageView clear, @NonNull TextView dob, @NonNull FloatingActionButton fab,
+      @NonNull Guideline guideline3, @NonNull TextView heading1, @NonNull TextView heading2,
+      @NonNull LinearLayout idelLayout, @NonNull TextView information,
       @NonNull LinearLayout linearLayout5, @NonNull TextView name, @NonNull TextView nextDate,
-      @NonNull TextView nextVac, @NonNull TextView textView,
+      @NonNull TextView nextVac, @NonNull TextView textView, @NonNull LinearLayout vaccination,
       @NonNull RecyclerView vaccinationDateList, @NonNull RecyclerView vaccinationList,
       @NonNull TextView viewAll, @NonNull ViewPager2 viewPager) {
     this.rootView = rootView;
+    this.babyWeight = babyWeight;
     this.back = back;
     this.childLayout = childLayout;
+    this.childMenuLayout = childMenuLayout;
+    this.childWeightLayout = childWeightLayout;
     this.clear = clear;
     this.dob = dob;
     this.fab = fab;
@@ -107,6 +124,7 @@ public final class FragmentRecipesBinding implements ViewBinding {
     this.nextDate = nextDate;
     this.nextVac = nextVac;
     this.textView = textView;
+    this.vaccination = vaccination;
     this.vaccinationDateList = vaccinationDateList;
     this.vaccinationList = vaccinationList;
     this.viewAll = viewAll;
@@ -140,6 +158,12 @@ public final class FragmentRecipesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.baby_weight;
+      LinearLayout babyWeight = ViewBindings.findChildViewById(rootView, id);
+      if (babyWeight == null) {
+        break missingId;
+      }
+
       id = R.id.back;
       ImageView back = ViewBindings.findChildViewById(rootView, id);
       if (back == null) {
@@ -149,6 +173,18 @@ public final class FragmentRecipesBinding implements ViewBinding {
       id = R.id.child_layout;
       ScrollView childLayout = ViewBindings.findChildViewById(rootView, id);
       if (childLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.child_menu_layout;
+      ScrollView childMenuLayout = ViewBindings.findChildViewById(rootView, id);
+      if (childMenuLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.child_weight_layout;
+      ScrollView childWeightLayout = ViewBindings.findChildViewById(rootView, id);
+      if (childWeightLayout == null) {
         break missingId;
       }
 
@@ -230,6 +266,12 @@ public final class FragmentRecipesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.vaccination;
+      LinearLayout vaccination = ViewBindings.findChildViewById(rootView, id);
+      if (vaccination == null) {
+        break missingId;
+      }
+
       id = R.id.vaccination_date_list;
       RecyclerView vaccinationDateList = ViewBindings.findChildViewById(rootView, id);
       if (vaccinationDateList == null) {
@@ -254,9 +296,10 @@ public final class FragmentRecipesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentRecipesBinding((ConstraintLayout) rootView, back, childLayout, clear, dob,
-          fab, guideline3, heading1, heading2, idelLayout, information, linearLayout5, name,
-          nextDate, nextVac, textView, vaccinationDateList, vaccinationList, viewAll, viewPager);
+      return new FragmentRecipesBinding((ConstraintLayout) rootView, babyWeight, back, childLayout,
+          childMenuLayout, childWeightLayout, clear, dob, fab, guideline3, heading1, heading2,
+          idelLayout, information, linearLayout5, name, nextDate, nextVac, textView, vaccination,
+          vaccinationDateList, vaccinationList, viewAll, viewPager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

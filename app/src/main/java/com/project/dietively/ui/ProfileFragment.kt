@@ -44,7 +44,6 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.back.setOnClickListener {
@@ -210,11 +209,11 @@ class ProfileFragment : Fragment() {
 
         builder.setTitle("Logout")
             .setMessage("Are you sure you want to logout?")
-            .setPositiveButton("Yes") { dialog, which ->
+            .setPositiveButton("Yes") { _, _ ->
                 AppPreferences.loginUuid = ""
                 findNavController().popBackStack(R.id.loginFragment, false)
             }
-            .setNegativeButton("No") { dialog, which ->
+            .setNegativeButton("No") { dialog, _ ->
                 dialog.dismiss()
             }
             .show()

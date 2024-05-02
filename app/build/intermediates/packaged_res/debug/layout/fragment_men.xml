@@ -320,7 +320,7 @@
             android:id="@+id/main_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_gravity="center">
 
             <LinearLayout
@@ -394,6 +394,34 @@
                     android:orientation="vertical"
                     android:padding="@dimen/_10adp"
                     android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="@dimen/_100adp"
+                        android:layout_height="@dimen/_100adp"
+                        android:padding="@dimen/_8adp"
+                        android:src="@drawable/ic_gym_fitness" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="@dimen/_8adp"
+                        android:text="Workout plan"
+                        android:textColor="@color/app_white_100"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bmi_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_12adp"
+                    android:background="@drawable/bg_button"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10adp"
+                    android:visibility="visible">
 
                     <ImageView
                         android:layout_width="@dimen/_100adp"

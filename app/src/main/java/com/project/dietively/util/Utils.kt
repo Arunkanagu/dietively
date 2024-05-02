@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.project.dietively.roomdb.BMIResult
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -75,7 +76,8 @@ fun addOneDay(dateString: String, dateFormat: String): String {
 
     // Check if adding one day exceeds the current date
     if (cal.get(Calendar.YEAR) == currentDate.get(Calendar.YEAR) &&
-        cal.get(Calendar.DAY_OF_YEAR) == currentDate.get(Calendar.DAY_OF_YEAR)) {
+        cal.get(Calendar.DAY_OF_YEAR) == currentDate.get(Calendar.DAY_OF_YEAR)
+    ) {
         // If adding one day exceeds the current date, return the current date
         return sdf.format(cal.time)
     }
@@ -139,9 +141,11 @@ fun classifyDate(date: Date): String {
                 currentDate.get(Calendar.DAY_OF_MONTH) == givenDate.get(Calendar.DAY_OF_MONTH) -> {
             "isToday"
         }
+
         currentDate.after(givenDate) -> {
             "is pastday"
         }
+
         else -> {
             "next coming date"
         }
@@ -151,4 +155,40 @@ fun classifyDate(date: Date): String {
 fun isEmailValid(email: String): Boolean {
     val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+$")
     return emailRegex.matches(email)
+}
+
+fun calculateBMI(weight: Double, height: Double, gender: String, age: Int): BMIResult {
+    // BMI formula: weight (kg) / (height (m) * height (m))
+    var bmi = weight / (height * height)
+
+    // Adjust BMI based on gender and age
+    bmi += when (gender.lowercase(Locale.ROOT)) {
+        "male" -> when {
+            age < 18 -> -1 // Adjust BMI for males under 18
+            age in 18..30 -> -0.5 // Adjust BMI for males between 18 and 30
+            age in 31..50 -> 0.5 // Adjust BMI for males between 31 and 50
+            else -> 1.0 // Adjust BMI for males above 50
+        }
+
+        "female" -> when {
+            age < 18 -> -1 // Adjust BMI for females under 18
+            age in 18..30 -> -0.5 // Adjust BMI for females between 18 and 30
+            age in 31..50 -> 0.5 // Adjust BMI for females between 31 and 50
+            else -> 1.0 // Adjust BMI for females above 50
+        }
+
+        else -> 0.0 // No adjustment for other genders
+    }.toDouble()
+
+    val formattedBMI = String.format("%.2f", bmi)
+    bmi = formattedBMI.toDouble()
+    // Determine BMI category
+    val category = when {
+        bmi < 18.5 -> "Underweight"
+        bmi < 25 -> "Normal weight"
+        bmi < 30 -> "Overweight"
+        else -> "Obese"
+    }
+
+    return BMIResult(bmi, category)
 }

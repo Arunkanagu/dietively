@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+array gender_options
 array weight_gain_items
 array weight_loss_items
 color app_black_100
@@ -53,6 +54,8 @@ drawable ic_logout
 drawable ic_menu_book
 drawable ic_person
 drawable ic_remove
+drawable ic_vaccination
+drawable ic_weight
 drawable ic_women_exercise
 drawable ic_women_periods
 drawable img_child
@@ -71,8 +74,14 @@ id add_data1
 id add_data2
 id add_ticket
 id age
+id age_text
 id age_textField
+id age_textField1
+id age_textField2
+id age_textField3
+id age_textField4
 id ain
+id baby_weight
 id back
 id back_date
 id back_to_login
@@ -92,7 +101,9 @@ id basic_status_5
 id basic_status_6
 id basic_status_7
 id basic_status_8
+id bmi_btn
 id cal
+id calculate_btn
 id calorie
 id calories
 id cancel_btn
@@ -102,6 +113,8 @@ id card
 id change_date
 id change_pass_btn
 id child_layout
+id child_menu_layout
+id child_weight_layout
 id clear
 id confirm_pass
 id confirm_pass_field
@@ -139,6 +152,8 @@ id forget
 id forgetPassFragment
 id form_layout
 id gender
+id gender_text
+id go_to
 id go_to_login
 id guideline
 id guideline1
@@ -148,6 +163,7 @@ id guideline5
 id heading1
 id heading2
 id health_care
+id height_text
 id homeFragment
 id idel_layout
 id image
@@ -177,6 +193,7 @@ id mobile
 id mobile_no
 id mobile_textField
 id month_name
+id msg
 id name
 id nav_graph
 id nav_host_fragment
@@ -226,16 +243,19 @@ id tv1
 id user
 id user_textField1
 id vaccina
+id vaccination
 id vaccination_date_list
 id vaccination_list
 id viewPager
 id view_all
 id web_plan_btn
 id web_view
+id weightFragment
 id weight_gain
 id weight_list
 id weight_list_layout
 id weight_loss
+id weight_text
 id weight_title
 id womenFragment
 id workoutTitle1
@@ -248,6 +268,7 @@ layout calendar_day_item
 layout daily_food_layout
 layout dialog_change_data
 layout food_items
+layout fragment_child_weight
 layout fragment_dairy
 layout fragment_forget_pass
 layout fragment_home
@@ -326,9 +347,11 @@ string add_info
 string add_quantity
 string age_str
 string app_name
+string bmi_str
 string break_fast_str
 string calorie
 string calories
+string calu_str
 string carbohydrates
 string change_pass_str
 string diary_str
@@ -344,7 +367,9 @@ string forget_pass_title
 string forget_pass_title_sub
 string forget_str
 string gender
+string gender_str
 string health_str
+string height_str
 string hello_blank_fragment
 string log_in_buttom_str
 string log_in_str
@@ -361,6 +386,7 @@ string protein
 string quantity_str
 string recipes_str
 string save
+string select_age_str
 string sign_up_buttom_str
 string sign_up_str
 string sign_up_title
@@ -371,6 +397,7 @@ string track_str
 string user_str
 string weight_gain_title
 string weight_loss_title
+string weight_str
 string women_str
 style Base.Theme.Dietively
 style LoginTextInputLayoutStyle

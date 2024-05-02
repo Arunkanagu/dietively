@@ -63,4 +63,9 @@
         android:name="com.project.dietively.ui.WomenFragment"
         android:label="fragment_women"
         tools:layout="@layout/fragment_women" />
+    <fragment
+        android:id="@+id/weightFragment"
+        android:name="com.project.dietively.ui.WeightFragment"
+        android:label="fragment_child_weight"
+        tools:layout="@layout/fragment_child_weight" />
 </navigation>

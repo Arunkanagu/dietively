@@ -77,6 +77,9 @@ public final class FragmentMenBinding implements ViewBinding {
   public final ImageView basicStatus8;
 
   @NonNull
+  public final LinearLayout bmiBtn;
+
+  @NonNull
   public final ImageView clear;
 
   @NonNull
@@ -140,11 +143,11 @@ public final class FragmentMenBinding implements ViewBinding {
       @NonNull ImageView basicStatus2, @NonNull ImageView basicStatus3,
       @NonNull ImageView basicStatus4, @NonNull ImageView basicStatus5,
       @NonNull ImageView basicStatus6, @NonNull ImageView basicStatus7,
-      @NonNull ImageView basicStatus8, @NonNull ImageView clear, @NonNull LinearLayout foodLayout,
-      @NonNull LinearLayout foodPlanBtn, @NonNull WebView foodView, @NonNull Guideline guideline3,
-      @NonNull LinearLayout linearLayout5, @NonNull ScrollView mainLayout,
-      @NonNull TextView textView, @NonNull LinearLayout webPlanBtn, @NonNull WebView webView,
-      @NonNull LinearLayout weightGain, @NonNull RecyclerView weightList,
+      @NonNull ImageView basicStatus8, @NonNull LinearLayout bmiBtn, @NonNull ImageView clear,
+      @NonNull LinearLayout foodLayout, @NonNull LinearLayout foodPlanBtn,
+      @NonNull WebView foodView, @NonNull Guideline guideline3, @NonNull LinearLayout linearLayout5,
+      @NonNull ScrollView mainLayout, @NonNull TextView textView, @NonNull LinearLayout webPlanBtn,
+      @NonNull WebView webView, @NonNull LinearLayout weightGain, @NonNull RecyclerView weightList,
       @NonNull LinearLayout weightListLayout, @NonNull LinearLayout weightLoss,
       @NonNull TextView weightTitle, @NonNull ScrollView workoutLayout,
       @NonNull LinearLayout workoutPlanBtn, @NonNull TextView workoutTitle1,
@@ -167,6 +170,7 @@ public final class FragmentMenBinding implements ViewBinding {
     this.basicStatus6 = basicStatus6;
     this.basicStatus7 = basicStatus7;
     this.basicStatus8 = basicStatus8;
+    this.bmiBtn = bmiBtn;
     this.clear = clear;
     this.foodLayout = foodLayout;
     this.foodPlanBtn = foodPlanBtn;
@@ -317,6 +321,12 @@ public final class FragmentMenBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.bmi_btn;
+      LinearLayout bmiBtn = ViewBindings.findChildViewById(rootView, id);
+      if (bmiBtn == null) {
+        break missingId;
+      }
+
       id = R.id.clear;
       ImageView clear = ViewBindings.findChildViewById(rootView, id);
       if (clear == null) {
@@ -433,10 +443,10 @@ public final class FragmentMenBinding implements ViewBinding {
 
       return new FragmentMenBinding((ConstraintLayout) rootView, back, basic1, basic2, basic3,
           basic4, basic5, basic6, basic7, basic8, basicStatus1, basicStatus2, basicStatus3,
-          basicStatus4, basicStatus5, basicStatus6, basicStatus7, basicStatus8, clear, foodLayout,
-          foodPlanBtn, foodView, guideline3, linearLayout5, mainLayout, textView, webPlanBtn,
-          webView, weightGain, weightList, weightListLayout, weightLoss, weightTitle, workoutLayout,
-          workoutPlanBtn, workoutTitle1, workoutTitleStatus1);
+          basicStatus4, basicStatus5, basicStatus6, basicStatus7, basicStatus8, bmiBtn, clear,
+          foodLayout, foodPlanBtn, foodView, guideline3, linearLayout5, mainLayout, textView,
+          webPlanBtn, webView, weightGain, weightList, weightListLayout, weightLoss, weightTitle,
+          workoutLayout, workoutPlanBtn, workoutTitle1, workoutTitleStatus1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

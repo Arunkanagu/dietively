@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="gender_options">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
     <string-array name="weight_gain_items">
         <item>Homemade protein smoothies</item>
         <item>Rice</item>
@@ -46,9 +50,11 @@
     <string name="add_quantity">Add Quantity</string>
     <string name="age_str">Age</string>
     <string name="app_name">Dietively</string>
+    <string name="bmi_str">BMI Calculation</string>
     <string name="break_fast_str">Breakfast</string>
     <string name="calorie">Calories</string>
     <string name="calories">Calories</string>
+    <string name="calu_str">Calculate the BMI</string>
     <string name="carbohydrates">Carbohydrates</string>
     <string name="change_pass_str">Change Password</string>
     <string name="diary_str">Diary</string>
@@ -64,7 +70,9 @@
     <string name="forget_pass_title_sub">It\'s ok! reset your password.</string>
     <string name="forget_str">Forget Password</string>
     <string name="gender">Gender</string>
+    <string name="gender_str">Gender</string>
     <string name="health_str">Health</string>
+    <string name="height_str">Enter Your Height in Centimeters</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="log_in_buttom_str">Don\'t have an account yet? <b><font color="#4D8A3F">Join Now</font></b></string>
     <string name="log_in_str">Log In</string>
@@ -81,6 +89,7 @@
     <string name="quantity_str">Quantity :</string>
     <string name="recipes_str">Recipes</string>
     <string name="save">Add</string>
+    <string name="select_age_str">Select Your Age</string>
     <string name="sign_up_buttom_str">Already have an Account?<font color="#4D8A3F">Log In</font></string>
     <string name="sign_up_str">Sign Up</string>
     <string name="sign_up_title">Welcome</string>
@@ -91,6 +100,7 @@
     <string name="user_str">Full Name</string>
     <string name="weight_gain_title">Weight Gain</string>
     <string name="weight_loss_title">Weight Loss</string>
+    <string name="weight_str">Enter Your Weight in KiloGrams</string>
     <string name="women_str">Women</string>
     <style name="Base.Theme.Dietively" parent="Theme.Material3.Light.NoActionBar">
         
